@@ -135,7 +135,7 @@ try {
         }
     }
     if ($release) {
-        foreach ($required in 'LICENSE.txt', 'SOURCE.txt', 'notices/THIRD_PARTY_NOTICES.txt') {
+        foreach ($required in 'LICENSE.txt', 'SOURCE.txt', 'notices/THIRD_PARTY_NOTICES.txt', 'notices/native/LICENSE-ELECTION.txt') {
             if (!(Test-Path -LiteralPath "$destination/$required" -PathType Leaf)) { throw "Release installer omits $required" }
         }
     }

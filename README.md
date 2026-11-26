@@ -50,15 +50,12 @@ library; the album art is drawn by a script in this repository.*
 
 ## Install
 
-The first public installer is pending release approval. These steps apply
-once the Windows installer appears on the Releases page.
-
 ECHO runs on **Windows 10 and 11, x64**. It needs the Microsoft Edge WebView2
 runtime, which current Windows includes; the installer fetches it from
 Microsoft if it is missing.
 
-1. Download `ECHO-<version>-windows-x64-setup.exe` from
-   [Releases](https://github.com/Venuss1337/echo/releases).
+1. Download `ECHO-1.0.0-windows-x64-setup.exe` from the
+   [latest release](https://github.com/Venuss1337/echo/releases/latest).
 2. Optionally verify it against `SHA256SUMS.txt` or with
    `gh attestation verify <file> --repo Venuss1337/echo`.
 3. Run it. ECHO installs for the current user and does not need
@@ -127,3 +124,6 @@ ECHO is free software under the [GNU General Public License v3.0 or
 later](LICENSE). It includes libmpv, FFmpeg and other components under their
 own licenses; each release publishes the complete corresponding source and
 notices. See [Licensing](docs/LICENSING.md).
+
+Portions of this software are copyright © The FreeType Project
+(www.freetype.org). All rights reserved.

@@ -1,0 +1,1681 @@
+diff --git a/README.md b/README.md
+index 16d148b..e64e101 100644
+--- a/README.md
++++ b/README.md
+@@ -41,16 +41,16 @@ instructions. Alternatively use `meson`.
+ ## License
+ 
+ GNU FriBidi is Free Software; you can redistribute it and/or modify it under the
+-terms of the [GNU Lesser General Public License] as published by the Free Software
++terms of the [GNU General Public License] as published by the Free Software
+ 
+-Foundation; either version 2.1 of the License, or (at your option) any later
++Foundation; either version 3 of the License, or (at your option) any later
+ version.
+ 
+ GNU FriBidi is distributed in the hope that it will be useful, but WITHOUT ANY
+ WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+-PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
++PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ 
+-You should have received a copy of the GNU Lesser General Public License along
++You should have received a copy of the GNU General Public License along
+ with GNU FriBidi, in a file named COPYING; if not, see:
+ <https://www.gnu.org/licenses/>.
+ 
+@@ -170,4 +170,4 @@ of contributors.
+ [Mirroring]: https://www.unicode.org/reports/tr9/#Mirroring
+ [GTK+]: https://www.gtk.org/
+ [GNOME]: https://www.gnome.org/
+-[GNU Lesser General Public License]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
++[GNU General Public License]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
+diff --git a/bin/fribidi-benchmark.c b/bin/fribidi-benchmark.c
+index 07ac336..dc2628e 100644
+--- a/bin/fribidi-benchmark.c
++++ b/bin/fribidi-benchmark.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/bin/fribidi-main.c b/bin/fribidi-main.c
+index 6a1a8a5..92d432b 100644
+--- a/bin/fribidi-main.c
++++ b/bin/fribidi-main.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-arabic-shaping-tab.c b/gen.tab/gen-arabic-shaping-tab.c
+index 251fe59..8fe9505 100644
+--- a/gen.tab/gen-arabic-shaping-tab.c
++++ b/gen.tab/gen-arabic-shaping-tab.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004, 2005 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-bidi-type-tab.c b/gen.tab/gen-bidi-type-tab.c
+index 05b1d16..0cd0f26 100644
+--- a/gen.tab/gen-bidi-type-tab.c
++++ b/gen.tab/gen-bidi-type-tab.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002,2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-brackets-tab.c b/gen.tab/gen-brackets-tab.c
+index 3c15ada..9b5e0e7 100644
+--- a/gen.tab/gen-brackets-tab.c
++++ b/gen.tab/gen-brackets-tab.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 2017 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-brackets-type-tab.c b/gen.tab/gen-brackets-type-tab.c
+index 9ec60cc..79306eb 100644
+--- a/gen.tab/gen-brackets-type-tab.c
++++ b/gen.tab/gen-brackets-type-tab.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 2017 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-joining-type-tab.c b/gen.tab/gen-joining-type-tab.c
+index ced404a..92fba31 100644
+--- a/gen.tab/gen-joining-type-tab.c
++++ b/gen.tab/gen-joining-type-tab.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-mirroring-tab.c b/gen.tab/gen-mirroring-tab.c
+index e19be91..b7eb7ec 100644
+--- a/gen.tab/gen-mirroring-tab.c
++++ b/gen.tab/gen-mirroring-tab.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002,2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/gen-unicode-version.c b/gen.tab/gen-unicode-version.c
+index 3462416..356db53 100644
+--- a/gen.tab/gen-unicode-version.c
++++ b/gen.tab/gen-unicode-version.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/gen.tab/packtab.c b/gen.tab/packtab.c
+index af39888..0c7e0e0 100644
+--- a/gen.tab/packtab.c
++++ b/gen.tab/packtab.c
+@@ -2,16 +2,16 @@
+  * Copyright (C) 2001 Behdad Esfahbod. 
+  * 
+  * This library is free software; you can redistribute it and/or 
+- * modify it under the terms of the GNU Lesser General Public 
++ * modify it under the terms of the GNU General Public 
+  * License as published by the Free Software Foundation; either 
+- * version 2.1 of the License, or (at your option) any later version. 
++ * version 3 of the License, or (at your option) any later version. 
+  * 
+  * This library is distributed in the hope that it will be useful, 
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+- * Lesser General Public License for more details. 
++ * General Public License for more details. 
+  * 
+- * You should have received a copy of the GNU Lesser General Public License 
++ * You should have received a copy of the GNU General Public License 
+  * along with this library, in a file named COPYING; if not, write to the 
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+  * Boston, MA 02110-1301, USA  
+diff --git a/gen.tab/packtab.h b/gen.tab/packtab.h
+index 7ae80f0..8d264fb 100644
+--- a/gen.tab/packtab.h
++++ b/gen.tab/packtab.h
+@@ -2,16 +2,16 @@
+  * Copyright (C) 2001 Behdad Esfahbod. 
+  * 
+  * This library is free software; you can redistribute it and/or 
+- * modify it under the terms of the GNU Lesser General Public 
++ * modify it under the terms of the GNU General Public 
+  * License as published by the Free Software Foundation; either 
+- * version 2.1 of the License, or (at your option) any later version. 
++ * version 3 of the License, or (at your option) any later version. 
+  * 
+  * This library is distributed in the hope that it will be useful, 
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+- * Lesser General Public License for more details. 
++ * General Public License for more details. 
+  * 
+- * You should have received a copy of the GNU Lesser General Public License 
++ * You should have received a copy of the GNU General Public License 
+  * along with this library, in a file named COPYING; if not, write to the 
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+  * Boston, MA 02110-1301, USA  
+diff --git a/lib/bidi-types.h b/lib/bidi-types.h
+index 86f3d02..1775689 100644
+--- a/lib/bidi-types.h
++++ b/lib/bidi-types.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/common.h b/lib/common.h
+index c05e692..5e2a9a3 100644
+--- a/lib/common.h
++++ b/lib/common.h
+@@ -7,16 +7,16 @@
+  * Copyright (C) 2004 Sharif FarsiWeb, Inc.
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/debug.h b/lib/debug.h
+index 24a080b..a1ed76b 100644
+--- a/lib/debug.h
++++ b/lib/debug.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-arabic.c b/lib/fribidi-arabic.c
+index 2de6f6c..cc7ffb8 100644
+--- a/lib/fribidi-arabic.c
++++ b/lib/fribidi-arabic.c
+@@ -5,16 +5,16 @@
+  * This file is part of GNU FriBidi.
+  * 
+  * GNU FriBidi is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public License
+- * as published by the Free Software Foundation; either version 2.1
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 3
+  * of the License, or (at your option) any later version.
+  * 
+  * GNU FriBidi is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with GNU FriBidi; if not, see: <https://www.gnu.org/licenses/>.
+  * 
+  * For licensing issues, contact <fribidi.license@gmail.com> or write to
+diff --git a/lib/fribidi-arabic.h b/lib/fribidi-arabic.h
+index 2d6e520..2692f02 100644
+--- a/lib/fribidi-arabic.h
++++ b/lib/fribidi-arabic.h
+@@ -5,16 +5,16 @@
+  * This file is part of GNU FriBidi.
+  * 
+  * GNU FriBidi is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public License
+- * as published by the Free Software Foundation; either version 2.1
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 3
+  * of the License, or (at your option) any later version.
+  * 
+  * GNU FriBidi is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with GNU FriBidi; if not, see: <https://www.gnu.org/licenses/>.
+  * 
+  * For licensing issues, contact <fribidi.license@gmail.com> or write to
+diff --git a/lib/fribidi-bidi-types-list.h b/lib/fribidi-bidi-types-list.h
+index c4ffc6f..f7f026b 100644
+--- a/lib/fribidi-bidi-types-list.h
++++ b/lib/fribidi-bidi-types-list.h
+@@ -9,16 +9,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-bidi-types.c b/lib/fribidi-bidi-types.c
+index 76ce79e..885e03d 100644
+--- a/lib/fribidi-bidi-types.c
++++ b/lib/fribidi-bidi-types.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-bidi-types.h b/lib/fribidi-bidi-types.h
+index 007a662..6aaaf36 100644
+--- a/lib/fribidi-bidi-types.h
++++ b/lib/fribidi-bidi-types.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-bidi.c b/lib/fribidi-bidi.c
+index 6abf326..af28f96 100644
+--- a/lib/fribidi-bidi.c
++++ b/lib/fribidi-bidi.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000,2017 Dov Grobgeld
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-bidi.h b/lib/fribidi-bidi.h
+index 4e3277c..fd77bfe 100644
+--- a/lib/fribidi-bidi.h
++++ b/lib/fribidi-bidi.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-brackets.c b/lib/fribidi-brackets.c
+index 1beb8f3..f4235dd 100644
+--- a/lib/fribidi-brackets.c
++++ b/lib/fribidi-brackets.c
+@@ -7,16 +7,16 @@
+  * This file is part of GNU FriBidi.
+  * 
+  * GNU FriBidi is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public License
+- * as published by the Free Software Foundation; either version 2.1
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 3
+  * of the License, or (at your option) any later version.
+  * 
+  * GNU FriBidi is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with GNU FriBidi; if not, write to the Free Software
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  * 
+diff --git a/lib/fribidi-brackets.h b/lib/fribidi-brackets.h
+index af1f68f..501e35e 100644
+--- a/lib/fribidi-brackets.h
++++ b/lib/fribidi-brackets.h
+@@ -7,16 +7,16 @@
+  * This file is part of GNU FriBidi.
+  * 
+  * GNU FriBidi is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public License
+- * as published by the Free Software Foundation; either version 2.1
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 3
+  * of the License, or (at your option) any later version.
+  * 
+  * GNU FriBidi is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with GNU FriBidi; if not, write to the Free Software
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  * 
+diff --git a/lib/fribidi-char-sets-cap-rtl.c b/lib/fribidi-char-sets-cap-rtl.c
+index d0448c3..4059d38 100644
+--- a/lib/fribidi-char-sets-cap-rtl.c
++++ b/lib/fribidi-char-sets-cap-rtl.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-cap-rtl.h b/lib/fribidi-char-sets-cap-rtl.h
+index 0d99d9b..69c45d8 100644
+--- a/lib/fribidi-char-sets-cap-rtl.h
++++ b/lib/fribidi-char-sets-cap-rtl.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-cp1255.c b/lib/fribidi-char-sets-cp1255.c
+index 76eb1e1..d82eb10 100644
+--- a/lib/fribidi-char-sets-cp1255.c
++++ b/lib/fribidi-char-sets-cp1255.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-cp1255.h b/lib/fribidi-char-sets-cp1255.h
+index 5fca172..6f2db9d 100644
+--- a/lib/fribidi-char-sets-cp1255.h
++++ b/lib/fribidi-char-sets-cp1255.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-cp1256.c b/lib/fribidi-char-sets-cp1256.c
+index 7915491..b5d438b 100644
+--- a/lib/fribidi-char-sets-cp1256.c
++++ b/lib/fribidi-char-sets-cp1256.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-cp1256.h b/lib/fribidi-char-sets-cp1256.h
+index 8ca7c3d..3fafb20 100644
+--- a/lib/fribidi-char-sets-cp1256.h
++++ b/lib/fribidi-char-sets-cp1256.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-iso8859-6.c b/lib/fribidi-char-sets-iso8859-6.c
+index d518723..7bf5bc4 100644
+--- a/lib/fribidi-char-sets-iso8859-6.c
++++ b/lib/fribidi-char-sets-iso8859-6.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-iso8859-6.h b/lib/fribidi-char-sets-iso8859-6.h
+index 01a1c4a..ccc88ab 100644
+--- a/lib/fribidi-char-sets-iso8859-6.h
++++ b/lib/fribidi-char-sets-iso8859-6.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-iso8859-8.c b/lib/fribidi-char-sets-iso8859-8.c
+index 00df20c..59a6b1b 100644
+--- a/lib/fribidi-char-sets-iso8859-8.c
++++ b/lib/fribidi-char-sets-iso8859-8.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-iso8859-8.h b/lib/fribidi-char-sets-iso8859-8.h
+index 22af54b..405234a 100644
+--- a/lib/fribidi-char-sets-iso8859-8.h
++++ b/lib/fribidi-char-sets-iso8859-8.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-list.h b/lib/fribidi-char-sets-list.h
+index b0231d8..b34c888 100644
+--- a/lib/fribidi-char-sets-list.h
++++ b/lib/fribidi-char-sets-list.h
+@@ -9,16 +9,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-utf8.c b/lib/fribidi-char-sets-utf8.c
+index 9fc8647..3220506 100644
+--- a/lib/fribidi-char-sets-utf8.c
++++ b/lib/fribidi-char-sets-utf8.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets-utf8.h b/lib/fribidi-char-sets-utf8.h
+index a8832ca..b9d2582 100644
+--- a/lib/fribidi-char-sets-utf8.h
++++ b/lib/fribidi-char-sets-utf8.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets.c b/lib/fribidi-char-sets.c
+index 219b627..dc75f4f 100644
+--- a/lib/fribidi-char-sets.c
++++ b/lib/fribidi-char-sets.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-char-sets.h b/lib/fribidi-char-sets.h
+index 2486784..01163f7 100644
+--- a/lib/fribidi-char-sets.h
++++ b/lib/fribidi-char-sets.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-common.h b/lib/fribidi-common.h
+index 6d4dd58..aab826f 100644
+--- a/lib/fribidi-common.h
++++ b/lib/fribidi-common.h
+@@ -7,16 +7,16 @@
+  * Copyright (C) 2004 Sharif FarsiWeb, Inc.
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-deprecated.c b/lib/fribidi-deprecated.c
+index d9fcfff..7c05011 100644
+--- a/lib/fribidi-deprecated.c
++++ b/lib/fribidi-deprecated.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-deprecated.h b/lib/fribidi-deprecated.h
+index cb2322d..d61307a 100644
+--- a/lib/fribidi-deprecated.h
++++ b/lib/fribidi-deprecated.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004, 2005 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-flags.h b/lib/fribidi-flags.h
+index 166c93a..fffde39 100644
+--- a/lib/fribidi-flags.h
++++ b/lib/fribidi-flags.h
+@@ -7,16 +7,16 @@
+  * Copyright (C) 2005 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-joining-types-list.h b/lib/fribidi-joining-types-list.h
+index 198bad0..7e0acc6 100644
+--- a/lib/fribidi-joining-types-list.h
++++ b/lib/fribidi-joining-types-list.h
+@@ -9,16 +9,16 @@
+  * Copyright (C) 2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-joining-types.c b/lib/fribidi-joining-types.c
+index ba52cc7..dc6b9de 100644
+--- a/lib/fribidi-joining-types.c
++++ b/lib/fribidi-joining-types.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-joining-types.h b/lib/fribidi-joining-types.h
+index 2125a61..2dd17ac 100644
+--- a/lib/fribidi-joining-types.h
++++ b/lib/fribidi-joining-types.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-joining.c b/lib/fribidi-joining.c
+index 99c4f37..2f67040 100644
+--- a/lib/fribidi-joining.c
++++ b/lib/fribidi-joining.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-joining.h b/lib/fribidi-joining.h
+index 92539dd..4737ec3 100644
+--- a/lib/fribidi-joining.h
++++ b/lib/fribidi-joining.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-mirroring.c b/lib/fribidi-mirroring.c
+index 69701e7..896e9a3 100644
+--- a/lib/fribidi-mirroring.c
++++ b/lib/fribidi-mirroring.c
+@@ -7,16 +7,16 @@
+  * This file is part of GNU FriBidi.
+  * 
+  * GNU FriBidi is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public License
+- * as published by the Free Software Foundation; either version 2.1
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 3
+  * of the License, or (at your option) any later version.
+  * 
+  * GNU FriBidi is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with GNU FriBidi; if not, write to the Free Software
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  * 
+diff --git a/lib/fribidi-mirroring.h b/lib/fribidi-mirroring.h
+index ddc3a14..f72086f 100644
+--- a/lib/fribidi-mirroring.h
++++ b/lib/fribidi-mirroring.h
+@@ -7,16 +7,16 @@
+  * This file is part of GNU FriBidi.
+  * 
+  * GNU FriBidi is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public License
+- * as published by the Free Software Foundation; either version 2.1
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version 3
+  * of the License, or (at your option) any later version.
+  * 
+  * GNU FriBidi is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with GNU FriBidi; if not, write to the Free Software
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  * 
+diff --git a/lib/fribidi-run.c b/lib/fribidi-run.c
+index e88dce2..c5a7e04 100644
+--- a/lib/fribidi-run.c
++++ b/lib/fribidi-run.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000,2017 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-shape.c b/lib/fribidi-shape.c
+index aafd497..4d46382 100644
+--- a/lib/fribidi-shape.c
++++ b/lib/fribidi-shape.c
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2005 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-shape.h b/lib/fribidi-shape.h
+index ff258b5..568fb17 100644
+--- a/lib/fribidi-shape.h
++++ b/lib/fribidi-shape.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004, 2005 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-types.h b/lib/fribidi-types.h
+index 90238b4..b08dec2 100644
+--- a/lib/fribidi-types.h
++++ b/lib/fribidi-types.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi-unicode.h b/lib/fribidi-unicode.h
+index f5a5783..d564e81 100644
+--- a/lib/fribidi-unicode.h
++++ b/lib/fribidi-unicode.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2001,2002 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi.c b/lib/fribidi.c
+index 052f931..d83a6fe 100644
+--- a/lib/fribidi.c
++++ b/lib/fribidi.c
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/fribidi.h b/lib/fribidi.h
+index 0ef83ae..02e0526 100644
+--- a/lib/fribidi.h
++++ b/lib/fribidi.h
+@@ -7,16 +7,16 @@
+  * Copyright (C) 2004 Sharif FarsiWeb, Inc
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/joining-types.h b/lib/joining-types.h
+index 6e11fa1..6899552 100644
+--- a/lib/joining-types.h
++++ b/lib/joining-types.h
+@@ -8,16 +8,16 @@
+  * Copyright (C) 2004 Behdad Esfahbod
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/lib/run.h b/lib/run.h
+index 88cddec..9de5312 100644
+--- a/lib/run.h
++++ b/lib/run.h
+@@ -10,16 +10,16 @@
+  * Copyright (C) 1999,2000 Dov Grobgeld
+  * 
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  * 
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  * 
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/run.tests b/test/run.tests
+index 81676fc..2fa34eb 100644
+--- a/test/run.tests
++++ b/test/run.tests
+@@ -4,16 +4,16 @@
+ # Copyright (C) 2001,2002 Behdad Esfahbod.
+ # 
+ # This library is free software; you can redistribute it and/or
+-# modify it under the terms of the GNU Lesser General Public  
++# modify it under the terms of the GNU General Public  
+ # License as published by the Free Software Foundation; either
+-# version 2.1 of the License, or (at your option) any later version.
++# version 3 of the License, or (at your option) any later version.
+ # 
+ # This library is distributed in the hope that it will be useful,  
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of   
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-# Lesser General Public License for more details.
++# General Public License for more details.
+ # 
+-# You should have received a copy of the GNU Lesser General Public License  
++# You should have received a copy of the GNU General Public License  
+ # along with this library, in a file named COPYING; if not, write to the
+ # Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ # Boston, MA 02110-1301, USA
+diff --git a/test/test-charset-not-found.c b/test/test-charset-not-found.c
+index 2da64a8..f89f97d 100644
+--- a/test/test-charset-not-found.c
++++ b/test/test-charset-not-found.c
+@@ -3,16 +3,16 @@
+  * with FRIBIDI_CHAR_SET_NOT_FOUND
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/test-debug-deep-levels.c b/test/test-debug-deep-levels.c
+index faac58d..cdae131 100644
+--- a/test/test-debug-deep-levels.c
++++ b/test/test-debug-deep-levels.c
+@@ -3,16 +3,16 @@
+  * deeply nested embeddings
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/test-isolate-chain.c b/test/test-isolate-chain.c
+index 7a5be17..ce43685 100644
+--- a/test/test-isolate-chain.c
++++ b/test/test-isolate-chain.c
+@@ -2,16 +2,16 @@
+  * test-isolate-chain.c - regression test for long chains of isolates
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/test-par-direction.c b/test/test-par-direction.c
+index 299975d..5af1726 100644
+--- a/test/test-par-direction.c
++++ b/test/test-par-direction.c
+@@ -4,16 +4,16 @@
+  * Copyright (C) 2026 ChipLab
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/test-reorder-nsm.c b/test/test-reorder-nsm.c
+index 34a42a0..d4320c5 100644
+--- a/test/test-reorder-nsm.c
++++ b/test/test-reorder-nsm.c
+@@ -4,16 +4,16 @@
+  * Copyright (C) 2026 Dov Grobgeld
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/unicode-conformance/BidiCharacterTest.c b/test/unicode-conformance/BidiCharacterTest.c
+index f832e4f..35e69c8 100644
+--- a/test/unicode-conformance/BidiCharacterTest.c
++++ b/test/unicode-conformance/BidiCharacterTest.c
+@@ -2,16 +2,16 @@
+  * Copyright (C) 2015, 2017 Dov Grobgeld
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
+diff --git a/test/unicode-conformance/BidiTest.c b/test/unicode-conformance/BidiTest.c
+index bad7a95..f4d3081 100644
+--- a/test/unicode-conformance/BidiTest.c
++++ b/test/unicode-conformance/BidiTest.c
+@@ -2,16 +2,16 @@
+  * Copyright (C) 2009 Behdad Esfahbod
+  *
+  * This library is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * This library is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
++ * General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public License
++ * You should have received a copy of the GNU General Public License
+  * along with this library, in a file named COPYING; if not, write to the
+  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  * Boston, MA 02110-1301, USA
