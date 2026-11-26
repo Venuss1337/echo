@@ -50,8 +50,7 @@ library; the album art is drawn by a script in this repository.*
 
 ## Install
 
-The first public installer is pending release approval. These steps apply
-once the Windows installer appears on the Releases page.
+ECHO is available as source. Check Releases for Windows installers and their checksums.
 
 ECHO runs on **Windows 10 and 11, x64**. It needs the Microsoft Edge WebView2
 runtime, which current Windows includes; the installer fetches it from
