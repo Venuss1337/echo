@@ -1,0 +1,8 @@
+bun.lock
+src/generated
+src-tauri/gen
+src-tauri/target
+target
+dist
+playwright-report
+test-results

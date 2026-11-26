@@ -1,0 +1,4 @@
+/* Noise is decoration that PNG cannot compress, so baselines leave it out. */
+.field-grain {
+  visibility: hidden;
+}

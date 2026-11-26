@@ -1,0 +1,946 @@
+/* Listings, grids, collections and folders. ------------------------------------ */
+.page {
+  padding: 22px var(--gutter) var(--dock-clear);
+}
+.fill-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding-bottom: 0;
+}
+.page > h1:not(.visually-hidden, .home-title),
+.page-title h1 {
+  font-size: var(--type-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+.page-title {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 18px;
+}
+.page-title h1 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+/* The sections of the library are its headings. */
+.tabs {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: 2px 26px;
+  margin-bottom: 6px;
+}
+.tabs a {
+  border-radius: 6px;
+  color: color-mix(in oklab, var(--text) 52%, transparent);
+  font: 400 var(--type-heading) / 1.08 var(--display);
+  letter-spacing: -0.03em;
+}
+.tabs a:hover {
+  color: color-mix(in oklab, var(--text) 80%, transparent);
+}
+.tabs a[aria-current="page"] {
+  color: var(--text);
+}
+.library-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+.scroll-section {
+  padding-bottom: var(--dock-clear);
+  overflow-y: auto;
+}
+.scroll-section > * {
+  flex-shrink: 0;
+}
+.section-lede {
+  max-width: 62ch;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+.section-bar {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+  min-height: 42px;
+  margin-bottom: 2px;
+}
+.section-title {
+  color: var(--muted);
+  font: 400 13px/1.4 var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+/* The tab already names these; the heading stays for assistive technology. */
+.section-title .named-by-tab {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.sort-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--faint);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.sort-control select {
+  appearance: none;
+  field-sizing: content;
+  height: 34px;
+  padding: 0 30px 0 12px;
+  border-radius: 17px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.sort-control select:hover {
+  background: var(--hover);
+}
+.sort-control option {
+  background: #1f1a20;
+}
+.sort-control::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border: solid var(--muted);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.filter-chip,
+.selection-bar {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.filter-chip {
+  padding: 3px 5px 3px 16px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+}
+.filter-chip strong,
+.selection-bar strong {
+  margin-inline-end: 8px;
+  color: var(--text);
+  font-weight: 600;
+}
+.selection-bar .quiet {
+  min-height: 34px;
+}
+.chip-clear {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.chip-clear:hover {
+  background: var(--hover);
+}
+.chip-clear svg.lucide {
+  width: 15px;
+}
+
+/* Rows. Rhythm and hover do the separating; nothing is ruled. ------------------- */
+.virtual-table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  margin-inline: -10px;
+}
+.virtual-scroll {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: var(--dock-clear);
+  overflow: auto;
+  overflow-anchor: none;
+  scroll-padding-bottom: var(--dock-clear);
+}
+.virtual-canvas {
+  position: relative;
+  width: 100%;
+}
+.virtual-row {
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--row);
+}
+.artist-virtual {
+  height: var(--artist-row);
+}
+.table-head,
+.track-row {
+  display: grid;
+  grid-template-columns:
+    34px 42px minmax(0, 1fr) minmax(0, 0.5fr)
+    34px 62px 34px;
+  align-items: center;
+  gap: 14px;
+  padding-inline: 10px;
+}
+.no-album :is(.table-head, .track-row) {
+  grid-template-columns: 34px 42px minmax(0, 1fr) 34px 62px 34px;
+}
+.no-art :is(.table-head, .track-row) {
+  grid-template-columns: 34px minmax(0, 1fr) 34px 62px 34px;
+}
+.no-album .cell-album {
+  display: none;
+}
+.table-head {
+  flex: none;
+  min-height: 32px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.virtual-table .table-head {
+  scrollbar-gutter: stable;
+}
+.track-row {
+  position: relative;
+  height: var(--row);
+  border-radius: var(--radius-row);
+}
+.track-row:is(:hover, :focus-within) {
+  background: var(--hover);
+}
+.track-row.is-selected {
+  background: var(--selected);
+}
+.cell-lead {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.cell-number {
+  min-width: 28px;
+  color: var(--faint);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.cell-number svg.lucide {
+  width: 17px;
+  height: 17px;
+  margin-inline: auto;
+  color: var(--accent);
+}
+.row-play {
+  position: absolute;
+  inset: 0 auto 0 -3px;
+  margin-block: auto;
+  color: var(--text);
+  opacity: 0;
+}
+.row-play svg {
+  fill: currentColor;
+}
+.track-row:is(:hover, :focus-within) .row-play {
+  opacity: 1;
+}
+.track-row:is(:hover, :focus-within) .cell-number:has(~ .row-play) {
+  opacity: 0;
+}
+.has-grip .cell-lead {
+  margin-inline-start: -9px;
+}
+.has-grip .grip {
+  width: 19px;
+  padding-inline: 0;
+  opacity: 0.55;
+}
+.track-row:is(:hover, :focus-within) .grip {
+  opacity: 1;
+}
+.has-grip .row-play {
+  left: 15px;
+}
+.cell-title {
+  display: grid;
+  min-width: 0;
+}
+.line-title,
+.line-sub,
+.cell-album,
+.cell-album a,
+.artist-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.line-title {
+  font-weight: 550;
+}
+.is-current .line-title {
+  color: var(--accent);
+}
+.line-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: var(--type-small);
+}
+.cell-album {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.cell-time {
+  text-align: end;
+}
+.track-row .cell-time {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.cell-heart .heart:not([aria-pressed="true"]),
+.cell-actions .icon-button {
+  opacity: 0;
+}
+.track-row:is(:hover, :focus-within)
+  :is(.cell-heart .heart, .cell-actions .icon-button) {
+  opacity: 1;
+}
+.unavailable .line-title,
+.track-row.unavailable .cell-time {
+  color: var(--faint);
+}
+.track-row.unavailable .art {
+  filter: grayscale(0.8) brightness(0.65);
+}
+.tag {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+  color: var(--caution);
+  font-size: 12px;
+}
+.tag svg.lucide {
+  width: 13px;
+  height: 13px;
+}
+.skeleton-line {
+  width: 40%;
+  height: 9px;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 0.08);
+}
+.disc-title {
+  padding: 22px 10px 6px;
+  font: 400 24px/1.1 var(--display);
+}
+
+/* Records ------------------------------------------------------------------------ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 26px 22px;
+}
+.cards.one-row {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(132px, 14.5cqi, 236px), 1fr)
+  );
+  grid-template-rows: auto;
+  grid-auto-rows: 0;
+  row-gap: 0;
+  margin: -8px -14px 0 0;
+  padding: 8px 14px 0 0;
+  overflow: hidden;
+}
+/* Records on one ledge, the latest standing nearest. The heading stands beside
+   it, in the air above the others. */
+.ledge-shelf {
+  display: grid;
+  grid-template: "lead title" 1fr "lead rest" auto / minmax(0, 1.5fr) minmax(
+      0,
+      5fr
+    );
+  column-gap: 26px;
+}
+.ledge-lead {
+  grid-area: lead;
+}
+.ledge-shelf .shelf-title {
+  grid-area: title;
+  align-self: start;
+  justify-content: start;
+  gap: 22px;
+}
+.ledge {
+  display: grid;
+  grid-area: rest;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: end;
+  gap: 24px;
+}
+.grid-scroll {
+  padding-top: 6px;
+}
+.album-row {
+  position: absolute;
+  inset: 0 0 auto;
+  display: grid;
+  gap: 20px;
+}
+.album-card {
+  position: relative;
+  display: grid;
+  min-width: 0;
+}
+.album-art {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  margin-bottom: 11px;
+  aspect-ratio: 1;
+}
+/* Every record opens a little when you reach for it. */
+.album-art::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: var(--radius-print);
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--glow) 70%, #5d545b),
+    var(--ink)
+  );
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14);
+  opacity: 0;
+}
+.album-card:is(:hover, :focus-within) .album-art::before {
+  opacity: 1;
+  transform: translateX(6.5%) rotate(3.4deg);
+}
+.album-cover {
+  display: block;
+  border-radius: var(--radius-print);
+  box-shadow: 0 10px 26px -10px rgb(0 0 0 / 0.55);
+}
+.album-actions {
+  position: absolute;
+  inset: auto 9px 9px auto;
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+}
+.album-actions .transport-primary {
+  width: 40px;
+  height: 40px;
+}
+.album-actions .icon-button:not(.transport-primary) {
+  width: 40px;
+  height: 40px;
+  background: rgb(16 12 16 / 0.82);
+  color: var(--text);
+}
+.album-actions .icon-button:not(.transport-primary):hover {
+  background: rgb(38 31 38 / 0.94);
+}
+.album-card:is(:hover, :focus-within) .album-actions {
+  opacity: 1;
+}
+.album-card.unavailable .art {
+  filter: grayscale(0.8) brightness(0.6);
+}
+.album-title,
+.album-sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.album-title {
+  font-weight: 600;
+}
+.album-sub {
+  color: var(--muted);
+  font-size: var(--type-small);
+}
+.ledge-lead .album-title {
+  font: 400 27px/1.14 var(--display);
+  letter-spacing: -0.02em;
+}
+.ribbon {
+  display: grid;
+  flex: none;
+  grid-auto-columns: 128px;
+  grid-auto-flow: column;
+  gap: 18px;
+  margin-bottom: 10px;
+  padding: 6px 12px 6px 0;
+  overflow: auto hidden;
+}
+.artist-directory {
+  margin-inline: -10px;
+}
+.artist-line {
+  position: absolute;
+  inset: 0 0 auto;
+  display: grid;
+  gap: 0 22px;
+}
+.artist-row {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  align-items: center;
+  gap: 17px;
+  height: var(--artist-row);
+  padding-inline: 10px;
+  border-radius: 12px;
+}
+.artist-row:is(:hover, :focus-within) {
+  background: var(--hover);
+}
+.artist-row .art {
+  border-radius: 50%;
+}
+.artist-name {
+  overflow: hidden;
+  font: 400 30px/1.08 var(--display);
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.artist-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  column-gap: 28px;
+  margin-inline: -10px;
+}
+.artist-results .artist-name {
+  font-size: 26px;
+}
+.shelf {
+  margin-top: 44px;
+}
+.shelf h2,
+.listing-title {
+  margin-bottom: 16px;
+  font-size: var(--type-shelf);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.shelf-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.shelf-title a {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.shelf-title a:hover {
+  color: var(--text);
+}
+.shelf-title svg.lucide {
+  width: 15px;
+  height: 15px;
+}
+.listing {
+  margin-inline: -10px;
+}
+.search-page .shelf:first-of-type {
+  margin-top: 8px;
+}
+
+/* Playlists ------------------------------------------------------------------------- */
+.playlist-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 34px 26px;
+}
+.wall-lead {
+  grid-column: 1 / -1;
+}
+.playlist-tile {
+  display: grid;
+  gap: 13px;
+  border-radius: var(--radius-print);
+}
+.playlist-tile > .art {
+  box-shadow: 0 12px 30px -12px rgb(0 0 0 / 0.55);
+}
+.playlist-tile .tile-copy {
+  display: grid;
+  min-width: 0;
+}
+.playlist-tile strong {
+  font: 400 26px/1.12 var(--display);
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.playlist-tile em {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  font-style: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.playlist-tile small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: var(--type-small);
+}
+.playlist-tile:hover strong {
+  color: var(--accent);
+}
+.playlist-tile.featured {
+  grid-template-columns: minmax(180px, 34cqi) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(22px, 3.4cqi, 52px);
+  margin-bottom: 6px;
+}
+.featured > .art {
+  aspect-ratio: 16 / 11;
+}
+.featured strong {
+  font-size: clamp(44px, 7.4cqi, 112px);
+  letter-spacing: -0.036em;
+  line-height: 0.94;
+}
+.featured em {
+  max-width: 48ch;
+  margin-top: 14px;
+}
+.featured small {
+  margin-top: 8px;
+}
+.playlisthead {
+  display: grid;
+  flex: none;
+  grid-template-columns: clamp(120px, 20cqi, 260px) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(20px, 3cqi, 40px);
+  margin-bottom: 14px;
+}
+.playlisthead > .art {
+  aspect-ratio: 16 / 13;
+  box-shadow: var(--print-shadow);
+}
+.playlisthead h1 {
+  margin: 3px 0 8px;
+  font-size: calc(clamp(44px, 7cqi, 104px) * var(--fit, 1));
+}
+.playlisthead .lede {
+  margin-bottom: 5px;
+}
+.playlisthead .actions {
+  margin-top: 14px;
+}
+.empty-block {
+  max-width: 48ch;
+  padding-block: 6vh;
+}
+.empty-block svg.lucide {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 16px;
+  color: var(--accent);
+  stroke-width: 1.1;
+}
+:is(.empty-block, .empty-library) h2 {
+  font-size: clamp(42px, 5.4cqi, 76px);
+  letter-spacing: -0.034em;
+  line-height: 0.98;
+}
+:is(.empty-block, .empty-library) p {
+  margin-top: 14px;
+  color: var(--muted);
+}
+.empty-library {
+  max-width: 60ch;
+  padding-block: 5vh;
+}
+.empty-library .actions {
+  margin-top: 24px;
+}
+
+/* Folders ------------------------------------------------------------------------------ */
+.bar-actions,
+.root-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.root-list {
+  display: grid;
+  gap: 34px;
+  max-width: 860px;
+}
+.root-card {
+  display: grid;
+  gap: 14px;
+}
+.root-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.root-head > svg {
+  color: var(--accent);
+}
+.root-names {
+  flex: 1;
+  min-width: 0;
+}
+.root-names h3 {
+  font: 400 30px/1.1 var(--display);
+  letter-spacing: -0.02em;
+}
+.root-path {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  user-select: text;
+  white-space: nowrap;
+}
+.badge {
+  flex: none;
+  color: var(--muted);
+  font-size: 13px;
+}
+.badge-warn {
+  color: var(--caution);
+}
+.root-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 44px;
+}
+.root-stats dt {
+  color: var(--faint);
+  font-size: 12.5px;
+}
+.root-stats dd {
+  font-variant-numeric: tabular-nums;
+}
+.scan-note {
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: 13px;
+}
+.confirm {
+  display: grid;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--well);
+}
+.scan-progress {
+  display: grid;
+  flex: none;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 12px 16px 14px;
+  border-radius: 14px;
+  background: var(--well);
+}
+.scan-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+.scan-line strong {
+  font-weight: 600;
+}
+.scan-line span {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.scan-line button {
+  min-height: 34px;
+  margin-inline-start: auto;
+}
+
+/* The canvas decides, not the window: it shares the window with other surfaces. */
+@container canvas (max-width: 820px) {
+  .table-head,
+  .track-row {
+    grid-template-columns: 34px 42px minmax(0, 1fr) 34px 58px 34px;
+    gap: 12px;
+  }
+  .cell-album {
+    display: none;
+  }
+  .ledge-shelf {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 3fr);
+  }
+  .ledge {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ledge > :nth-child(n + 4) {
+    display: none;
+  }
+}
+@container canvas (min-width: 821px) and (max-width: 1060px) {
+  .ledge-shelf {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 4fr);
+  }
+  .ledge {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .ledge > :nth-child(n + 5) {
+    display: none;
+  }
+}
+@container canvas (max-width: 600px) {
+  .page {
+    --dock-clear: 178px;
+    padding-top: 14px;
+  }
+  .tabs {
+    gap: 0 18px;
+  }
+  .tabs a,
+  .page-title h1 {
+    font-size: 32px;
+  }
+  .sort-control span,
+  .table-head {
+    display: none;
+  }
+  .table-head,
+  .track-row,
+  :is(.no-album, .no-art) .track-row {
+    grid-template-columns: 42px minmax(0, 1fr) 46px 34px;
+    gap: 10px;
+  }
+  .no-art .track-row {
+    grid-template-columns: 28px minmax(0, 1fr) 46px 34px;
+  }
+  .track-row.has-grip {
+    grid-template-columns: 20px 42px minmax(0, 1fr) 46px 34px;
+  }
+  .cell-heart,
+  .has-grip .cell-number,
+  .track-row:not(.no-art *) .cell-number {
+    display: none;
+  }
+  .track-row:not(.has-grip, .no-art *) .cell-lead {
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+  }
+  .row-play {
+    inset: 0 auto 0 4px;
+    background: rgb(16 12 16 / 0.78);
+  }
+  .no-art .row-play {
+    left: -3px;
+  }
+  .has-grip .row-play {
+    left: 36px;
+  }
+  .cell-actions .icon-button {
+    opacity: 1;
+  }
+  .cards,
+  .playlist-wall {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px 16px;
+  }
+  .ledge-shelf {
+    grid-template:
+      "title title" auto "lead rest" auto / minmax(0, 1.3fr)
+      minmax(0, 1fr);
+    column-gap: 16px;
+  }
+  .ledge {
+    grid-template-columns: minmax(0, 1fr);
+    align-self: end;
+  }
+  .ledge > :nth-child(n + 2) {
+    display: none;
+  }
+  .artist-results {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .artist-name {
+    font-size: 25px;
+  }
+  .playlist-tile.featured {
+    grid-template-columns: 124px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .featured > .art {
+    aspect-ratio: 1;
+  }
+  .featured strong {
+    font-size: 38px;
+  }
+  .featured em,
+  .playlisthead .lede {
+    display: none;
+  }
+  .playlisthead {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .playlisthead > .art {
+    aspect-ratio: 1;
+  }
+  .playlisthead h1 {
+    font-size: calc(44px * var(--fit, 1));
+  }
+  .playlisthead .title-longest {
+    --fit: 0.5;
+  }
+  .ribbon {
+    grid-auto-columns: 96px;
+  }
+  .ribbon .album-actions .transport-primary ~ .icon-button {
+    display: none;
+  }
+  .shelf {
+    margin-top: 32px;
+  }
+}
+@media (hover: none) {
+  .album-actions,
+  .cell-actions .icon-button,
+  .cell-heart .heart {
+    opacity: 1;
+  }
+}

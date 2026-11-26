@@ -1,0 +1,307 @@
+:root {
+  background: #141015;
+  color: var(--text);
+  font: 400 14px/1.45 var(--sans);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.2) transparent;
+}
+body {
+  overflow: hidden;
+  user-select: none;
+}
+input,
+textarea,
+.byline,
+.lede,
+h1 {
+  user-select: text;
+}
+button:enabled,
+a {
+  cursor: pointer;
+}
+a,
+img {
+  -webkit-user-drag: none;
+}
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
+}
+svg.lucide {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.6;
+}
+svg.solid {
+  fill: currentColor;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* A long title is still a title: it is set smaller, never truncated early. */
+.title-long {
+  --fit: 0.74;
+}
+.title-longer {
+  --fit: 0.5;
+}
+.title-longest {
+  --fit: 0.35;
+}
+.hero-title,
+.leaf-head h1,
+.immersive h1,
+.artist-head h1,
+.playlisthead h1 {
+  letter-spacing: -0.036em;
+  line-height: 0.92;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+:is(.title-longer, .title-longest):is(h1, h2) {
+  letter-spacing: -0.022em;
+  line-height: 1.03;
+}
+
+.kicker {
+  color: var(--accent);
+  font-size: 13.5px;
+}
+.byline {
+  font-size: 17px;
+}
+.byline-album::before {
+  content: "·";
+  margin-inline: 9px;
+  opacity: 0.6;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.meta i {
+  flex: none;
+  width: 3px;
+  height: 3px;
+  margin-inline: 9px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.55;
+}
+.lede {
+  max-width: 54ch;
+  color: var(--muted);
+}
+.byline a:hover,
+.line-sub a:hover,
+.cell-album a:hover,
+.album-sub a:hover,
+.album-title:hover,
+.artist-name:hover,
+.plaque-facts a:hover,
+.dock-artist:is(a):hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.echo-mark {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 27px;
+  height: 22px;
+  color: var(--accent);
+}
+.echo-mark i {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 11px;
+  height: 22px;
+  border: 1.6px solid;
+  border-radius: 50%;
+  transform: rotate(22deg);
+}
+.echo-mark i + i {
+  left: 8px;
+}
+.echo-mark i + i + i {
+  left: 13px;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 8px;
+  font-size: 21px;
+  font-weight: 760;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+/* Prints ------------------------------------------------------------------ */
+.art {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: var(--radius-print);
+  background: color-mix(in oklab, var(--ink) 60%, #17141a);
+}
+.art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.art-placeholder {
+  position: absolute;
+  inset: 0;
+  container-type: inline-size;
+  background:
+    radial-gradient(
+      circle at 76% 18%,
+      rgb(255 255 255 / 0.16),
+      transparent 58%
+    ),
+    linear-gradient(152deg, var(--glow), var(--ink));
+}
+.art-placeholder svg {
+  position: absolute;
+  inset: 12% -14% auto auto;
+  width: 80%;
+  fill: none;
+  stroke: rgb(255 255 255 / 0.24);
+  stroke-width: 0.9;
+}
+.mosaic {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: 1px;
+}
+.mosaic .art {
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.sleeve {
+  position: relative;
+  display: block;
+  isolation: isolate;
+  aspect-ratio: 1;
+}
+/* The echoes: the same photograph, twice more, turning away from the light. */
+.sleeve::before,
+.sleeve::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: var(--radius-print);
+  background:
+    linear-gradient(rgb(9 6 9 / 0.52), rgb(9 6 9 / 0.62)),
+    var(--print, linear-gradient(150deg, var(--glow), var(--ink))) center /
+      cover;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.13);
+  transform: translateX(9.5%) rotate(4deg);
+}
+.sleeve::before {
+  background:
+    linear-gradient(rgb(9 6 9 / 0.76), rgb(9 6 9 / 0.8)),
+    var(--print, linear-gradient(150deg, var(--glow), var(--ink))) center /
+      cover;
+  transform: translateX(18%) rotate(8deg);
+}
+.sleeve > .art {
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.1),
+    var(--print-shadow);
+}
+.sleeve-label {
+  position: absolute;
+  inset: auto 8% 8%;
+  overflow: hidden;
+  color: #fff3ea;
+  font: 400 clamp(13px, 12cqw, 46px) / 0.96 var(--display);
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  text-align: start;
+}
+.sleeve-label small {
+  display: block;
+  margin-top: 5%;
+  overflow: hidden;
+  color: rgb(255 243 236 / 0.86);
+  font: 500 clamp(8px, 3.6cqw, 13px) / 1.3 var(--sans);
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-note {
+  max-width: 60ch;
+  padding: 22px 0;
+  color: var(--muted);
+}
+.notice {
+  flex: none;
+  margin-bottom: 14px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: var(--well);
+  color: var(--muted);
+}
+.toast-region {
+  position: fixed;
+  z-index: 45;
+  inset: auto 0 138px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.toast {
+  max-width: min(480px, calc(100vw - 40px));
+  padding: 10px 20px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--over);
+  box-shadow: var(--lift-3);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+progress {
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border: 0;
+}
+progress::-webkit-progress-bar {
+  border-radius: 2px;
+  background: rgb(255 255 255 / 0.14);
+}
+progress::-webkit-progress-value {
+  border-radius: 2px;
+  background: var(--accent);
+}

@@ -1,0 +1,156 @@
+name: Release
+
+# Builds a versioned release from a tag: the decoder from pinned sources, the
+# production installer, the corresponding-source archives, notices and
+# checksums. It attests the assets and attaches them to a DRAFT release.
+# Publishing the draft is always a separate, manual maintainer decision.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to build, for example v1.0.0
+        required: true
+        type: string
+      draft:
+        description: Attach the verified assets to a draft GitHub release
+        type: boolean
+        default: false
+      redistribution-approved:
+        description: Maintainer has approved redistribution of this exact tagged build
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and verify Windows x64 release assets
+    runs-on: windows-2025
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - name: Validate the tag name
+        shell: pwsh
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          if ($env:TAG -cnotmatch '^v\d+\.\d+\.\d+$') { throw "Not a release tag: $env:TAG" }
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: refs/tags/${{ inputs.tag }}
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "22.17.0"
+          package-manager-cache: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: 1.4.5
+      - run: rustup toolchain install 1.100.0 --profile minimal --component clippy,rustfmt
+      - run: bun install --frozen-lockfile
+      - run: bunx playwright install chromium
+      - name: Tag matches the application version
+        shell: pwsh
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          $version = (Get-Content src-tauri/tauri.conf.json -Raw | ConvertFrom-Json).version
+          if ("v$version" -cne $env:TAG) { throw "Tag $env:TAG does not match version $version" }
+      - name: Full verification suite
+        run: bun run verify
+      - name: Dependency advisories and licenses
+        run: bun run test:security
+      - name: Build the decoder from pinned sources
+        shell: pwsh
+        run: |
+          $root = Join-Path $env:RUNNER_TEMP 'echo-native'
+          ./native/windows-x64/prepare.ps1 -Root $root
+          $env:MSYSTEM = 'UCRT64'
+          & "$root/msys64/usr/bin/bash.exe" -l -c 'root="$(cygpath -u "$1")"; bash "$root/build.sh" "$root" 4 local' echo $root
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Stage, compare with the reviewed decoder and test it
+        shell: pwsh
+        run: |
+          $root = Join-Path $env:RUNNER_TEMP 'echo-native'
+          $stage = Join-Path $env:RUNNER_TEMP 'ECHO native próba 日本'
+          ./native/windows-x64/stage.ps1 -Root $root -Destination $stage -LocalOnly
+          ./native/windows-x64/collect-sources.ps1 -ResourceRoot $stage -SourceCache "$root/package-sources"
+          foreach ($name in 'dlls.json', 'inventory.json', 'source-inventory.json') {
+            $expected = (Get-Content "./native/windows-x64/evidence/local/$name" -Raw) -replace '\r\n', "`n"
+            $built = (Get-Content "$stage/$name" -Raw) -replace '\r\n', "`n"
+            if ($built -cne $expected) { throw "Decoder rebuild differs from the reviewed $name" }
+          }
+          ./native/windows-x64/test-local.ps1 -ResourceRoot $stage
+          ./native/windows-x64/test-live.ps1 -ResourceRoot $stage
+          ./native/windows-x64/collect-notices.ps1 -Root $root -ResourceRoot $stage -SourceCache "$root/package-sources"
+      - name: Package the release
+        shell: pwsh
+        run: |
+          $root = Join-Path $env:RUNNER_TEMP 'echo-native'
+          $stage = Join-Path $env:RUNNER_TEMP 'ECHO native próba 日本'
+          ./native/windows-x64/package-release.ps1 -Root $root -ResourceRoot $stage -Destination "$env:RUNNER_TEMP/release"
+      - name: Install, verify and uninstall the release installer
+        shell: pwsh
+        run: |
+          $stage = Join-Path $env:RUNNER_TEMP 'ECHO native próba 日本'
+          $installer = Get-ChildItem "$env:RUNNER_TEMP/release" -Filter 'ECHO-*-windows-x64-setup.exe'
+          ./native/windows-x64/smoke-installer.ps1 -Installer $installer.FullName -Manifest "$stage/dlls.json"
+      - name: Verify checksums
+        shell: pwsh
+        run: |
+          Push-Location "$env:RUNNER_TEMP/release"
+          foreach ($line in Get-Content SHA256SUMS.txt) {
+            $digest, $file = $line -split '  ', 2
+            if ((Get-FileHash -LiteralPath $file).Hash.ToLowerInvariant() -cne $digest) { throw "Checksum mismatch: $file" }
+          }
+          Pop-Location
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        if: github.event.repository.private || inputs.redistribution-approved
+        with:
+          subject-path: ${{ runner.temp }}/release/ECHO-*
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        # Public Actions artifacts are downloadable even without a release.
+        if: github.event.repository.private || inputs.redistribution-approved
+        with:
+          name: release-${{ inputs.tag }}
+          path: ${{ runner.temp }}/release/
+          if-no-files-found: error
+          retention-days: 30
+
+  draft:
+    name: Attach assets to a draft release
+    needs: build
+    if: inputs.draft && inputs.redistribution-approved
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: release-${{ inputs.tag }}
+          path: release
+      - name: Create or update the draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          # Never publish here. An existing published release is left alone.
+          if gh release view "$TAG" --json isDraft --jq '.isDraft' 2>/dev/null | grep -qx false; then
+            echo "Release $TAG is already published; not modifying it." >&2
+            exit 1
+          fi
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --draft --verify-tag --title "ECHO ${TAG#v}" --notes "Draft. Replace with the release notes before publishing."
+          fi
+          gh release upload "$TAG" release/* --clobber

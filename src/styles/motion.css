@@ -1,0 +1,364 @@
+/*
+ * Motion. Each spatial change has its own choreography; nothing loops, and
+ * nothing moves while the room is still. All of it yields to reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  /* Controls answer at once and settle quickly. */
+  .icon-button,
+  .pill,
+  .quiet,
+  .text-button,
+  .track-row,
+  .artist-row,
+  .queue-row,
+  .tabs a,
+  .menu button,
+  .sidebar nav a,
+  .sidebar-foot :is(a, button),
+  .search-field input,
+  .caption button {
+    transition:
+      background-color var(--quick) ease,
+      color var(--quick) ease,
+      opacity var(--quick) ease;
+  }
+  .icon-button:active:not(:disabled) {
+    transform: scale(0.94);
+  }
+  .sidebar a::before {
+    transition: transform 220ms var(--out);
+  }
+  .transport-slider::-webkit-slider-thumb {
+    transition:
+      height var(--quick) ease,
+      margin var(--quick) ease;
+  }
+  .album-art::before {
+    transition:
+      transform 360ms var(--out),
+      opacity var(--quick) ease;
+  }
+  .album-actions,
+  .queue-row-actions,
+  .volume .slider {
+    transition: opacity var(--quick) ease;
+  }
+  .dock-sleeve .sleeve::before,
+  .dock-sleeve .sleeve::after,
+  .hero-sleeve .sleeve::before,
+  .hero-sleeve .sleeve::after {
+    transition: transform 420ms var(--out);
+  }
+  .work {
+    transition: filter 320ms ease;
+  }
+  .skip {
+    transition: transform 180ms var(--out);
+  }
+
+  /* Surfaces take the new light more slowly than they answer the hand. */
+  .sidebar,
+  .dock,
+  .inspector {
+    transition: background-color 900ms ease;
+  }
+  .exposure-art,
+  .work-current::before {
+    transition: opacity 700ms var(--out);
+  }
+  .exposure + .exposure {
+    animation: expose var(--exposure-time) ease both;
+  }
+
+  /* Small things arrive from where they were called. */
+  .menu {
+    animation: unfold 150ms var(--out);
+  }
+  .dialog {
+    animation: settle 260ms var(--out);
+  }
+  .dialog-layer,
+  .drawer-scrim {
+    animation: appear 180ms ease;
+  }
+  .toast {
+    animation: settle 240ms var(--out);
+  }
+  .sidebar[data-open] {
+    animation: draw 260ms var(--out);
+  }
+  .slider-preview {
+    animation: appear 90ms ease;
+  }
+  /* The next work is hung from the side it was waiting on. */
+  .work-current.is-rehung {
+    animation: hang 620ms var(--out);
+  }
+
+  ::view-transition {
+    pointer-events: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+  ::view-transition-group(*) {
+    animation-duration: var(--surface-time);
+    animation-timing-function: var(--in-out);
+  }
+
+  /* Inspector and sidebar: room is made, then taken. The page is not stretched. */
+  [data-motion="inspector"] .canvas,
+  [data-motion="sidebar"] .canvas {
+    view-transition-name: canvas;
+  }
+  [data-motion="inspector"] .plane,
+  [data-motion="sidebar"] .plane {
+    view-transition-name: plane;
+  }
+  [data-motion="inspector"] .dock,
+  [data-motion="sidebar"] .dock {
+    view-transition-name: dock;
+  }
+  [data-motion="inspector"] .inspector {
+    view-transition-name: inspector;
+  }
+  [data-motion="inspector"] .sidebar,
+  [data-motion="sidebar"] .sidebar {
+    view-transition-name: sidebar;
+  }
+  [data-motion="inspector"] .titlebar,
+  [data-motion="sidebar"] .titlebar {
+    view-transition-name: titlebar;
+  }
+  :is([data-motion="inspector"], [data-motion="sidebar"]) {
+    &::view-transition-old(*),
+    &::view-transition-new(*) {
+      width: auto;
+      height: 100%;
+      object-fit: none;
+      object-position: 0 0;
+      overflow: clip;
+    }
+    /* The page reflows, so the old one leaves before the new one is read. The
+       surfaces around it only move. */
+    &::view-transition-old(canvas) {
+      animation: vanish 130ms ease both;
+    }
+    &::view-transition-new(canvas) {
+      animation: appear 210ms 50ms ease both;
+    }
+    &::view-transition-old(root),
+    &::view-transition-new(root) {
+      animation: none;
+    }
+    /* The record stands taller than the dock and must not be cut by it. */
+    &::view-transition-old(dock),
+    &::view-transition-new(dock) {
+      height: auto;
+      overflow: visible;
+    }
+    &::view-transition-old(plane),
+    &::view-transition-new(plane) {
+      width: 100%;
+      object-fit: fill;
+    }
+    &::view-transition-new(inspector):only-child {
+      animation: inspector-in var(--surface-time) var(--out);
+    }
+    &::view-transition-old(inspector):only-child {
+      animation: inspector-out 240ms var(--in-out) both;
+    }
+  }
+
+  /* Now Playing: the record leaves the dock and is hung on the wall. */
+  [data-motion="expand"] .dock-sleeve .sleeve,
+  [data-motion="expand"] .work-current .sleeve {
+    view-transition-name: sleeve;
+  }
+  [data-motion="expand"] .is-immersive .dock-sleeve .sleeve {
+    view-transition-name: none;
+  }
+  [data-motion="expand"] .dock {
+    view-transition-name: dock;
+  }
+  [data-motion="expand"] .sidebar {
+    view-transition-name: sidebar;
+  }
+  [data-motion="expand"] .plaque {
+    view-transition-name: plaque;
+  }
+  [data-motion="expand"] {
+    &::view-transition-old(root) {
+      animation: vanish var(--travel-time) ease both;
+    }
+    &::view-transition-new(root) {
+      animation: appear var(--travel-time) ease both;
+    }
+    &::view-transition-group(sleeve),
+    &::view-transition-group(dock) {
+      animation-duration: var(--travel-time);
+      animation-timing-function: var(--out);
+    }
+    &::view-transition-group(sleeve) {
+      z-index: 2;
+    }
+    /* The title hangs over the echoes, so it stays above the arriving record. */
+    &::view-transition-group(plaque) {
+      z-index: 3;
+    }
+    &::view-transition-old(dock),
+    &::view-transition-new(dock) {
+      height: 100%;
+      object-fit: cover;
+      overflow: clip;
+      border-radius: var(--radius-dock);
+    }
+    &::view-transition-old(sidebar):only-child {
+      animation: sidebar-out 340ms var(--in-out) both;
+    }
+    &::view-transition-new(sidebar):only-child {
+      animation: sidebar-out 420ms var(--out) reverse both;
+    }
+    &::view-transition-new(plaque):only-child {
+      animation: plaque-in 560ms 120ms var(--out) both;
+    }
+    &::view-transition-old(plaque):only-child {
+      animation: vanish 160ms ease both;
+    }
+  }
+
+  /* Compact: the dock itself unfolds into the card. */
+  [data-motion="compact"] :is(.dock, .edition) {
+    view-transition-name: card;
+  }
+  [data-motion="compact"] {
+    &::view-transition-old(root) {
+      animation: vanish 300ms ease both;
+    }
+    &::view-transition-new(root) {
+      animation: appear 300ms ease both;
+    }
+    &::view-transition-group(card) {
+      z-index: 2;
+      animation-duration: 440ms;
+      animation-timing-function: var(--out);
+    }
+    &::view-transition-old(card),
+    &::view-transition-new(card) {
+      height: 100%;
+      object-fit: cover;
+      overflow: clip;
+      border-radius: var(--radius-dock);
+    }
+    &::view-transition-old(card) {
+      animation: vanish 130ms ease both;
+    }
+    &::view-transition-new(card) {
+      animation: appear 200ms 40ms ease both;
+    }
+  }
+
+  /* A record travels from its shelf to its page. */
+  [data-motion="record"] .leaf-print .sleeve {
+    view-transition-name: record;
+  }
+  [data-motion="record"] .dock-slot {
+    view-transition-name: dock;
+  }
+  [data-motion="record"] {
+    &::view-transition-old(root) {
+      animation: vanish 240ms ease both;
+    }
+    &::view-transition-new(root) {
+      animation: appear 320ms ease both;
+    }
+    &::view-transition-group(record) {
+      animation-duration: 460ms;
+      animation-timing-function: var(--out);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (hover: hover) {
+  .dock-sleeve:hover .sleeve::after,
+  .hero-sleeve:hover .sleeve::after {
+    transform: translateX(13%) rotate(5.6deg);
+  }
+  .dock-sleeve:hover .sleeve::before,
+  .hero-sleeve:hover .sleeve::before {
+    transform: translateX(25%) rotate(11deg);
+  }
+}
+
+@keyframes expose {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vanish {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes unfold {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+@keyframes draw {
+  from {
+    transform: translateX(calc(-100% - 2 * var(--gap)));
+  }
+}
+@keyframes hang {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--from, 1) * 14cqi));
+  }
+}
+@keyframes inspector-in {
+  from {
+    opacity: 0.4;
+    transform: translateX(calc(100% + var(--gap)));
+  }
+}
+@keyframes inspector-out {
+  to {
+    opacity: 0;
+    transform: translateX(calc(100% + var(--gap)));
+  }
+}
+@keyframes sidebar-out {
+  to {
+    opacity: 0;
+    transform: translateX(-60%);
+  }
+}
+@keyframes plaque-in {
+  from {
+    opacity: 0;
+    transform: translateX(34px);
+  }
+}

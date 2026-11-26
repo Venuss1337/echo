@@ -1,0 +1,577 @@
+/* The window. One field, and surfaces placed inside it. ----------------------- */
+.shell {
+  position: relative;
+  display: grid;
+  isolation: isolate;
+  grid-template:
+    "nav bar bar" var(--band)
+    "nav canvas side" minmax(0, 1fr)
+    / calc(var(--sidebar) + var(--gap)) minmax(0, 1fr) auto;
+  height: 100dvh;
+  padding: 0 var(--gap) var(--gap);
+  overflow: hidden;
+}
+.shell[data-sidebar="rail"] {
+  grid-template-columns: calc(var(--rail) + var(--gap)) minmax(0, 1fr) auto;
+}
+.shell:is([data-sidebar="drawer"], [data-sidebar="none"]) {
+  grid-template:
+    "bar bar" var(--band)
+    "canvas side" minmax(0, 1fr)
+    / minmax(0, 1fr) auto;
+}
+.skip {
+  position: fixed;
+  z-index: 50;
+  top: 10px;
+  left: 10px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: var(--over);
+  box-shadow: var(--lift-3);
+  transform: translateY(-300%);
+}
+.skip:focus {
+  transform: none;
+}
+
+/* The field -------------------------------------------------------------------- */
+.field {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  background: #141015;
+  pointer-events: none;
+}
+.exposure,
+.exposure-art,
+.exposure-light,
+.field-grain {
+  position: absolute;
+  inset: 0;
+}
+.exposure {
+  background:
+    radial-gradient(
+      78% 96% at 86% -4%,
+      color-mix(in oklab, var(--glow) 96%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      46% 70% at -6% 88%,
+      color-mix(in oklab, var(--glow) 84%, transparent),
+      transparent 76%
+    ),
+    var(--base);
+}
+.exposure-art {
+  background:
+    linear-gradient(rgb(0 0 0 / var(--shade, 0)), rgb(0 0 0 / var(--shade, 0))),
+    var(--art, none) 50% 38% / cover;
+  mask-image: linear-gradient(#000 30%, transparent 92%);
+  opacity: 0.72;
+}
+/* Ink runs in from the reading side and up from the floor, so type is always on
+   a dark ground whatever the photograph does. */
+.exposure-light {
+  background:
+    radial-gradient(
+      56% 74% at 34% 44%,
+      color-mix(in oklab, var(--base) 88%, transparent) 10%,
+      color-mix(in oklab, var(--base) 62%, transparent) 52%,
+      transparent
+    ),
+    linear-gradient(
+      94deg,
+      color-mix(in oklab, var(--base) 46%, transparent),
+      color-mix(in oklab, var(--base) 66%, transparent) 46%,
+      color-mix(in oklab, var(--base) 20%, transparent)
+    ),
+    linear-gradient(
+      transparent 40%,
+      color-mix(in oklab, var(--base) 78%, transparent) 94%
+    );
+}
+/* A listing needs a dark ground. Shading the photograph keeps its hue and its
+   blacks; washing it with ink would only flatten it. */
+[data-exposure="read"] .exposure-art {
+  --shade: 0.47;
+  mask-image: linear-gradient(#000 22%, rgb(0 0 0 / 0.7) 42%, transparent 88%);
+  opacity: 1;
+}
+[data-exposure="read"] .exposure-light {
+  background:
+    linear-gradient(
+      94deg,
+      color-mix(in oklab, var(--base) 78%, transparent) 10%,
+      color-mix(in oklab, var(--base) 72%, transparent) 48%,
+      color-mix(in oklab, var(--base) 14%, transparent) 80%
+    ),
+    linear-gradient(
+      transparent 18%,
+      color-mix(in oklab, var(--base) 44%, transparent) 38%,
+      color-mix(in oklab, var(--base) 84%, transparent) 90%
+    );
+}
+[data-exposure="low"] .exposure-art {
+  opacity: 0.08;
+}
+[data-exposure="low"] .exposure-light {
+  background: linear-gradient(
+    color-mix(in oklab, var(--base) 22%, transparent),
+    color-mix(in oklab, var(--base) 52%, transparent)
+  );
+}
+.field-rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--accent);
+  stroke: currentColor;
+  stroke-opacity: 0.11;
+  mask-image: linear-gradient(100deg, transparent 22%, #000 76%);
+}
+[data-exposure="low"] .field-rings {
+  stroke-opacity: 0.055;
+}
+.field-grain {
+  background: url("/grain.png");
+  opacity: 0.11;
+}
+/* The caption must read on the palest cover. */
+.field::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 120px;
+  background: linear-gradient(rgb(8 6 9 / 0.5), transparent);
+}
+
+/* Title bar --------------------------------------------------------------------- */
+.titlebar {
+  z-index: 4;
+  display: flex;
+  grid-area: bar;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 0 calc(var(--caption-button) * 3 + 8px) 0 8px;
+  app-region: drag;
+}
+/* WebView2 makes one native caption window per rectangle between these, so they
+   are grouped: slivers between neighbouring buttons would be useless. */
+.titlebar-trail,
+.titlebar > :is(button, a, form),
+.caption,
+.sidebar-head a {
+  app-region: no-drag;
+}
+.titlebar-trail {
+  display: flex;
+  gap: 2px;
+}
+.titlebar-trail .forward {
+  margin-inline-start: -2px;
+}
+.sidebar-toggle {
+  margin-inline-end: 4px;
+}
+.search-field {
+  position: relative;
+  flex: 0 1 400px;
+  min-width: 0;
+}
+.search-field > svg {
+  position: absolute;
+  inset: 0 auto 0 13px;
+  width: 16px;
+  margin-block: auto;
+  color: var(--muted);
+  pointer-events: none;
+}
+.search-field input {
+  width: 100%;
+  height: 34px;
+  padding: 0 34px 1px 38px;
+  border-radius: 17px;
+  background: rgb(0 0 0 / 0.3);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.07);
+  color: var(--text);
+  font-size: 13.5px;
+}
+.search-field input:hover {
+  background: rgb(0 0 0 / 0.38);
+}
+.search-field input:focus {
+  background: rgb(0 0 0 / 0.46);
+  outline: 2px solid color-mix(in oklab, var(--accent) 70%, white);
+  outline-offset: -1px;
+}
+.search-field input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.search-field input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.search-field kbd {
+  position: absolute;
+  inset: 0 12px 0 auto;
+  height: 20px;
+  margin-block: auto;
+  padding: 0 7px;
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.1);
+  color: var(--muted);
+  font: 500 11.5px/20px var(--sans);
+  pointer-events: none;
+}
+.search-field input:focus ~ kbd,
+.search-field input:not(:placeholder-shown) ~ kbd {
+  display: none;
+}
+.search-link {
+  display: none;
+}
+.caption {
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+.caption button {
+  display: grid;
+  place-items: center;
+  width: var(--caption-button);
+  height: var(--band);
+  color: var(--text);
+}
+.caption svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+.caption.inactive button:not(:hover) {
+  color: var(--faint);
+}
+.caption button:is(:hover, [data-hovered]) {
+  background: rgb(255 255 255 / 0.09);
+}
+.caption button:is(:active, [data-pressed]) {
+  background: rgb(255 255 255 / 0.05);
+}
+.caption .close:hover {
+  background: #c42b1c;
+  color: #fff;
+}
+.caption .close:active {
+  background: #b12a1d;
+}
+.caption button:focus-visible {
+  outline-offset: -3px;
+}
+
+/* What is left when the shell itself fails: words, and a window to move. */
+.shell-failure {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 14px;
+  height: 100dvh;
+  padding: var(--band) 12vw;
+}
+.shell-failure::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--band);
+  app-region: drag;
+}
+.shell-failure h1 {
+  font-size: clamp(44px, 7vw, 92px);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+.shell-failure p {
+  color: var(--muted);
+}
+
+/* Sidebar ------------------------------------------------------------------------ */
+.sidebar {
+  z-index: 3;
+  display: flex;
+  grid-area: nav;
+  flex-direction: column;
+  min-height: 0;
+  margin: var(--gap) var(--gap) 0 0;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  background: color-mix(in oklab, var(--smoke) 82%, transparent);
+  box-shadow: var(--lift-1);
+}
+.sidebar-head {
+  flex: none;
+  padding: 6px 14px 13px 16px;
+  app-region: drag;
+}
+.sidebar nav {
+  flex: 1;
+  min-height: 0;
+  padding: 4px 8px 10px;
+  overflow: hidden auto;
+  scrollbar-width: none;
+  mask-image: linear-gradient(
+    transparent,
+    #000 8px,
+    #000 calc(100% - 18px),
+    transparent
+  );
+}
+.nav-group + .nav-group {
+  margin-top: 15px;
+}
+.sidebar nav a,
+.sidebar-foot :is(a, button) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 34px;
+  padding: 0 10px;
+  border-radius: 9px;
+  color: var(--muted);
+  text-align: start;
+}
+.sidebar nav a > span:last-child,
+.sidebar-foot span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar nav a:hover,
+.sidebar-foot :is(a, button):hover {
+  background: var(--hover);
+  color: var(--text);
+}
+.sidebar a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+}
+.sidebar a[aria-current="page"] svg {
+  color: var(--accent);
+}
+/* The needle again: one short stroke marks where you are. */
+.sidebar a::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  width: 3px;
+  height: 18px;
+  border-radius: 0 2px 2px 0;
+  background: var(--accent);
+  transform: scaleY(0);
+}
+.sidebar a[aria-current="page"]::before {
+  transform: none;
+}
+.sidebar-head a::before {
+  display: none;
+}
+.nav-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+  padding: 0 2px 0 10px;
+  color: var(--faint);
+  font-size: 12.5px;
+}
+.nav-label .icon-button {
+  width: 28px;
+  height: 28px;
+}
+.nav-label svg.lucide {
+  width: 15px;
+  height: 15px;
+}
+.nav-playlists a .art {
+  flex: none;
+  width: 24px;
+  margin-inline-start: -3px;
+  border-radius: 2px;
+}
+.nav-playlists a {
+  gap: 9px;
+}
+.sidebar-foot {
+  flex: none;
+  padding: 6px 8px 9px;
+}
+
+/* Rail: the same surface with its labels put away. */
+[data-sidebar="rail"] .sidebar:not([data-open]),
+[data-sidebar="rail"] .sidebar:not([data-open]) nav {
+  align-items: center;
+}
+[data-sidebar="rail"] .sidebar:not([data-open]) {
+  .sidebar-head {
+    padding-inline: 0;
+  }
+  .wordmark span:last-child,
+  nav a > span:last-child:not(.art),
+  .sidebar-foot span,
+  .nav-label > span {
+    position: absolute;
+    width: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  nav a,
+  .sidebar-foot :is(a, button) {
+    justify-content: center;
+    width: 46px;
+    padding: 0;
+  }
+  nav {
+    padding-inline: 10px;
+  }
+  .sidebar-foot {
+    padding-inline: 10px;
+  }
+  a::before {
+    left: -10px;
+  }
+  .nav-label {
+    justify-content: center;
+    padding: 0;
+  }
+  .nav-playlists a .art {
+    width: 30px;
+    margin: 0;
+  }
+  .nav-playlists a {
+    min-height: 40px;
+  }
+}
+
+/* Drawer: the sidebar over the page, when there is no room beside it. */
+.drawer-scrim {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background: rgb(8 6 9 / 0.5);
+  app-region: no-drag;
+}
+.sidebar[data-open] {
+  position: fixed;
+  z-index: 11;
+  inset: var(--gap) auto var(--gap) var(--gap);
+  width: min(264px, calc(100vw - 2 * var(--gap)));
+  margin: 0;
+  background: var(--panel);
+  box-shadow: var(--lift-3);
+}
+[data-sidebar="drawer"] .sidebar:not([data-open]) {
+  display: none;
+}
+
+/* Canvas -------------------------------------------------------------------------- */
+.plane,
+.canvas {
+  grid-area: canvas;
+  min-width: 0;
+  min-height: 0;
+  border-radius: var(--radius-panel);
+}
+.plane {
+  background: linear-gradient(rgb(8 6 9 / 0.2), rgb(8 6 9 / 0.36));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.045);
+}
+.canvas {
+  container: canvas / inline-size;
+  overflow: auto;
+  scroll-padding-block: 16px var(--dock-clear);
+  /* Content comes up out of the floor and goes under the title line softly. */
+  mask-image: linear-gradient(
+    transparent,
+    #000 14px,
+    #000 calc(100% - 116px),
+    transparent calc(100% - 34px)
+  );
+}
+.canvas:focus-visible {
+  outline: 0;
+}
+.canvas:focus-visible::after {
+  content: "";
+  position: fixed;
+  inset: 4px;
+  border: 2px solid var(--focus);
+  border-radius: 10px;
+  pointer-events: none;
+}
+.is-immersive .canvas {
+  grid-row: 1 / -1;
+  mask-image: none;
+  border-radius: 0;
+  margin: 0 calc(var(--gap) * -1) calc(var(--gap) * -1);
+}
+.is-immersive[data-inspector] .canvas {
+  margin-inline-end: 0;
+}
+.is-immersive .titlebar {
+  grid-row: 1;
+}
+
+@media (max-width: 680px) {
+  [data-exposure="read"] .exposure-light {
+    background: linear-gradient(
+      color-mix(in oklab, var(--base) 46%, transparent),
+      color-mix(in oklab, var(--base) 74%, transparent) 40%,
+      color-mix(in oklab, var(--base) 88%, transparent)
+    );
+  }
+  :root {
+    --gap: 8px;
+    --band: 48px;
+    --caption-button: 42px;
+  }
+  .titlebar {
+    gap: 4px;
+    padding-inline: 0 calc(var(--caption-button) * 3 + 2px);
+  }
+  .titlebar .search-field {
+    display: none;
+  }
+  .titlebar .search-link {
+    display: inline-grid;
+    margin-inline-start: auto;
+  }
+  .titlebar[data-searching="true"] .search-field {
+    display: block;
+    flex: 1;
+  }
+  .titlebar[data-searching="true"]
+    :is(.search-link, .forward, .sidebar-toggle) {
+    display: none;
+  }
+}
+@media (forced-colors: active) {
+  .sidebar a[aria-current="page"] {
+    outline: 1px solid Highlight;
+  }
+  .sidebar,
+  .dock,
+  .inspector,
+  .menu,
+  .dialog {
+    border: 1px solid CanvasText;
+  }
+  .transport-slider::-webkit-slider-runnable-track {
+    border: 1px solid CanvasText;
+  }
+}

@@ -1,0 +1,12 @@
+# Upstream license texts for crates whose published package omits them.
+# Each file was copied verbatim from the exact upstream commit recorded in
+# the crate's .cargo_vcs_info.json. scripts/collect-app-notices.ts uses them.
+alloc-stdlib-0.3.0/LICENSE <- https://github.com/dropbox/rust-alloc-no-stdlib/blob/0a81fd6928ea3b33c8cd484aa4575d50ffb98012/LICENSE
+lofty-0.25.5/LICENSE-APACHE <- https://github.com/Serial-ATA/lofty-rs/blob/59a3f5ad28f982102fdfaf8f458efd9eafb38747/LICENSE-APACHE
+lofty-0.25.5/LICENSE-MIT <- https://github.com/Serial-ATA/lofty-rs/blob/59a3f5ad28f982102fdfaf8f458efd9eafb38747/LICENSE-MIT
+ogg_pager-0.8.0/LICENSE-APACHE <- https://github.com/Serial-ATA/lofty-rs/blob/0c9c8222fb78d870b3b7068645197cc16c63560d/LICENSE-APACHE
+ogg_pager-0.8.0/LICENSE-MIT <- https://github.com/Serial-ATA/lofty-rs/blob/0c9c8222fb78d870b3b7068645197cc16c63560d/LICENSE-MIT
+selectors-0.38.0/LICENSE-MPL-2.0 <- the Mozilla Public License 2.0 text as published in the cssparser 0.36.0 crate (servo); selectors 0.38.0 (servo/stylo 572ecba2d1600e7c3d490586692a209faf703baa) has no license file but every source file names MPL-2.0
+ts-rs-12.0.1/LICENSE <- https://github.com/Aleph-Alpha/ts-rs/blob/7182ad8289596097235406b715fa04506443b4ad/LICENSE
+webview2-com-0.39.1/LICENSE <- https://github.com/wravery/webview2-rs/blob/edc2caf886175ccaebe86078c9cfe1ae2a187328/LICENSE
+webview2-com-sys-0.39.1/LICENSE <- https://github.com/wravery/webview2-rs/blob/edc2caf886175ccaebe86078c9cfe1ae2a187328/LICENSE

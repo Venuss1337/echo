@@ -1,0 +1,301 @@
+/* Home: the record on the turntable is the room. --------------------------------- */
+.home {
+  padding-top: 8px;
+}
+.home-title {
+  color: color-mix(in oklab, var(--text) 82%, transparent);
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  min-height: clamp(270px, 38vh, 500px);
+}
+.hero-copy {
+  min-width: 0;
+  padding-top: 16px;
+}
+.hero-title {
+  margin: 10px 0 16px;
+  font-size: calc(var(--type-display) * var(--fit, 1));
+}
+.hero .actions {
+  margin-top: 26px;
+}
+.hero .actions .meta {
+  margin-inline-start: 8px;
+}
+.hero-sleeve {
+  display: block;
+  justify-self: center;
+  z-index: 1;
+  width: min(82%, 43vh, 480px);
+  margin-inline-end: 8%;
+  border-radius: var(--radius-print);
+}
+/* Past the fold of the hero, but only into the air a ledge leaves free. */
+.hero:has(+ .ledge-shelf) .hero-sleeve {
+  margin-bottom: -7vh;
+}
+.threshold .hero-title {
+  font-size: calc(var(--type-title) * var(--fit, 1));
+}
+.threshold .lede {
+  font-size: 15.5px;
+}
+.threshold {
+  min-height: min(72vh, 660px);
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 0 clamp(30px, 5cqi, 84px);
+}
+.split > :only-child {
+  grid-column: 1 / -1;
+}
+.rotation,
+.playlist-index {
+  margin-inline: -10px;
+}
+.rotation button,
+.playlist-index a {
+  display: grid;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 62px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  text-align: start;
+}
+.rotation button {
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+}
+.playlist-index a {
+  grid-template-columns: minmax(0, 1fr) auto 64px;
+}
+.rotation button:hover:enabled,
+.playlist-index a:hover {
+  background: var(--hover);
+}
+.rotation strong,
+.rotation small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rotation strong {
+  font-weight: 550;
+}
+.rotation small,
+.rotation em,
+.playlist-index small {
+  color: var(--muted);
+  font-size: var(--type-small);
+  font-style: normal;
+}
+.rotation .unavailable {
+  opacity: 0.6;
+}
+.playlist-index a > span:first-child {
+  overflow: hidden;
+  font: 400 29px/1.2 var(--display);
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.playlist-index .art {
+  aspect-ratio: 4 / 3;
+}
+
+/* Album: two leaves. The print stays while the listing is read. ------------------- */
+.album-page {
+  display: grid;
+  grid-template:
+    "print head" auto
+    "print tracks" 1fr
+    / minmax(220px, 34cqi) minmax(0, 1fr);
+  align-items: start;
+  column-gap: clamp(70px, 9cqi, 150px);
+  padding-top: 26px;
+}
+.leaf-print {
+  position: sticky;
+  top: 26px;
+  grid-area: print;
+  max-width: 580px;
+}
+.leaf-print .sleeve {
+  view-transition-name: none;
+}
+.leaf-head {
+  grid-area: head;
+  min-width: 0;
+  padding-bottom: 26px;
+}
+.leaf-head h1 {
+  margin: 8px 0 14px;
+  font-size: calc(var(--type-title) * var(--fit, 1));
+}
+.leaf-head .meta {
+  margin-top: 7px;
+}
+.leaf-head .actions {
+  margin-top: 22px;
+}
+.album-page .listing {
+  grid-area: tracks;
+  min-width: 0;
+}
+.album-page .track-row {
+  height: 46px;
+}
+.album-page .track-row:has(.line-sub) {
+  height: var(--row);
+}
+
+/* Artist: the name is the picture. ------------------------------------------------- */
+.artist-head {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(130px, 25cqi, 340px);
+  align-items: end;
+  gap: 24px;
+  min-height: clamp(280px, 42vh, 480px);
+  padding-bottom: 8px;
+}
+.artist-name-block {
+  z-index: 1;
+  min-width: 0;
+}
+.artist-head h1 {
+  /* The name runs over the turned echoes of the first record. */
+  margin: 8px -7cqi 16px 0;
+  font-size: calc(clamp(64px, 14cqi, 230px) * var(--fit, 1));
+}
+.artist-head .actions {
+  margin-top: 20px;
+}
+.cover-fan {
+  position: relative;
+  align-self: center;
+  width: 86%;
+  aspect-ratio: 1;
+}
+.cover-fan .sleeve {
+  position: absolute;
+  inset: 0;
+}
+.cover-fan .sleeve:not(:only-child)::before,
+.cover-fan .sleeve:not(:only-child)::after {
+  display: none;
+}
+.cover-fan .sleeve:nth-last-child(2) {
+  filter: brightness(0.66);
+  transform: translateX(17%) rotate(6deg);
+}
+.cover-fan .sleeve:nth-last-child(3) {
+  filter: brightness(0.42);
+  transform: translateX(32%) rotate(12deg);
+}
+
+@container canvas (max-width: 860px) {
+  .album-page {
+    grid-template:
+      "print head" auto
+      "tracks tracks" auto
+      / minmax(120px, 30cqi) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 13cqi;
+  }
+  .leaf-print {
+    position: static;
+  }
+  .leaf-head {
+    padding-bottom: 0;
+  }
+  .album-page .listing {
+    margin-top: 28px;
+  }
+}
+@container canvas (max-width: 700px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@container canvas (max-width: 600px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 22px;
+    min-height: 0;
+  }
+  .hero-sleeve {
+    grid-row: 1;
+    justify-self: start;
+    width: min(58%, 26vh);
+    margin: 10px 0 0;
+  }
+  .hero:has(+ .ledge-shelf) .hero-sleeve {
+    margin-bottom: 0;
+  }
+  .hero-title {
+    margin: 4px 0 8px;
+    font-size: calc(62px * var(--fit, 1));
+  }
+  :is(.hero, .leaf-head, .artist-head) .title-longer {
+    --fit: 0.6;
+  }
+  :is(.hero, .leaf-head, .artist-head) .title-longest {
+    --fit: 0.48;
+  }
+  .hero .actions {
+    margin-top: 16px;
+  }
+  .home-title {
+    font-size: 20px;
+  }
+  .album-page {
+    grid-template:
+      "print" auto
+      "head" auto
+      "tracks" auto
+      / minmax(0, 1fr);
+    row-gap: 22px;
+    padding-top: 18px;
+  }
+  .leaf-print {
+    width: min(58%, 30vh);
+  }
+  .leaf-head h1 {
+    font-size: calc(54px * var(--fit, 1));
+  }
+  .album-page .listing {
+    margin-top: 0;
+  }
+  .artist-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    min-height: 0;
+    padding-top: 10px;
+  }
+  .cover-fan {
+    grid-row: 1;
+    justify-self: start;
+    width: min(46%, 24vh);
+  }
+  .artist-head h1 {
+    margin: 2px 0 10px;
+  }
+}
+@media (max-width: 680px) and (max-height: 580px) {
+  .hero .hero-sleeve {
+    width: min(58%, 20vh);
+  }
+}

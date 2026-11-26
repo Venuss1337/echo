@@ -1,0 +1,147 @@
+@font-face {
+  font-family: DM Sans;
+  src: url("/fonts/DMSans.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: Instrument Serif;
+  src: url("/fonts/InstrumentSerif.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Type. Fixed, because it must read on every light. */
+  --text: #f6f1ee;
+  --muted: #ccc3ca;
+  --faint: #b0a6af;
+  --focus: #ffe3ea;
+  --danger: #ffb0aa;
+  --caution: #f0c1b2;
+
+  --display:
+    "Instrument Serif", Georgia, "Yu Mincho", "MS Mincho", SimSun, serif;
+  --sans: "DM Sans", "Segoe UI", sans-serif;
+  --type-display: clamp(60px, 11.4cqi, 176px);
+  --type-title: clamp(46px, 7.6cqi, 124px);
+  --type-heading: clamp(34px, 4cqi, 54px);
+  --type-shelf: 30px;
+  --type-record: 21px;
+  --type-small: 12.5px;
+
+  /* Space and shape. Prints are square, instruments are round. */
+  --gap: 10px;
+  --band: 54px;
+  --gutter: clamp(20px, 3.2cqi, 56px);
+  --sidebar: 222px;
+  --rail: 66px;
+  --inspector: 316px;
+  --dock-clear: 136px;
+  --row: 56px;
+  --artist-row: 76px;
+  --radius-print: 3px;
+  --radius-row: 8px;
+  --radius-panel: 18px;
+  --radius-dock: 24px;
+  --control: 34px;
+  --caption-button: 46px;
+
+  /* Elevation. One light, above and to the right; shadows fall away from it. */
+  --edge: inset 0 1px 0 rgb(255 255 255 / 0.07);
+  --lift-1: var(--edge), 0 14px 34px -16px rgb(0 0 0 / 0.55);
+  --lift-2:
+    inset 0 1px 0 rgb(255 255 255 / 0.13),
+    inset 0 0 0 1px rgb(255 255 255 / 0.03), 0 2px 10px rgb(0 0 0 / 0.28),
+    0 30px 60px -14px rgb(0 0 0 / 0.78);
+  --lift-3:
+    inset 0 1px 0 rgb(255 255 255 / 0.1), 0 0 0 1px rgb(255 255 255 / 0.05),
+    0 24px 70px -10px rgb(0 0 0 / 0.75);
+  --print-shadow: 0 22px 54px -10px rgb(6 4 6 / 0.72);
+
+  /* Time. */
+  --quick: 140ms;
+  --surface-time: 320ms;
+  --travel-time: 520ms;
+  --exposure-time: 1000ms;
+  --out: cubic-bezier(0.2, 0.75, 0.2, 1);
+  --in-out: cubic-bezier(0.6, 0, 0.2, 1);
+}
+
+/* The house light, before any record is playing. Replaced per cover by the
+   Rust extractor, which guarantees the contrast of --text and --accent. */
+:root,
+.tone-house {
+  --ink: #33212a;
+  --glow: #74485a;
+  --accent: #eeb4c2;
+}
+
+/*
+ * Materials. Derived where a light is set, so each surface carries its own.
+ * --base is the floor of the field; the others rise out of it.
+ */
+:root,
+.shell,
+.dock-slot,
+.inspector,
+.edition,
+.exposure,
+.immersive,
+.playlist-tile,
+.tone-house,
+.tone-0,
+.tone-1,
+.tone-2,
+.tone-3,
+.tone-4,
+.tone-5 {
+  --base: color-mix(in oklab, var(--ink) 46%, #09070a);
+  --smoke: color-mix(in oklab, var(--ink) 34%, #0b090c);
+  --panel: color-mix(in oklab, var(--ink) 50%, #0f0c10);
+  --raised: color-mix(
+    in oklab,
+    color-mix(in oklab, var(--glow) 40%, var(--ink)) 74%,
+    #141116
+  );
+  --over: color-mix(in oklab, var(--ink) 48%, #1c181d);
+  --well: rgb(0 0 0 / 0.26);
+  --hover: rgb(255 255 255 / 0.065);
+  --press: rgb(255 255 255 / 0.1);
+  --selected: color-mix(in oklab, var(--accent) 15%, transparent);
+  --hairline: rgb(255 255 255 / 0.1);
+  --on-accent: color-mix(in oklab, var(--ink) 62%, #060406);
+}
+
+/* Records without a cover take one of six stable house tones. */
+.tone-0 {
+  --ink: #33212c;
+  --glow: #6d4258;
+  --accent: #eeb4c2;
+}
+.tone-1 {
+  --ink: #26223a;
+  --glow: #4d4474;
+  --accent: #c6bff2;
+}
+.tone-2 {
+  --ink: #38241f;
+  --glow: #7d4b3f;
+  --accent: #f0bfa6;
+}
+.tone-3 {
+  --ink: #1d2b36;
+  --glow: #3c6073;
+  --accent: #a9d4ea;
+}
+.tone-4 {
+  --ink: #302919;
+  --glow: #6b5a38;
+  --accent: #e6d09b;
+}
+.tone-5 {
+  --ink: #1c2f28;
+  --glow: #3a6152;
+  --accent: #a4dcc5;
+}

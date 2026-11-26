@@ -1,0 +1,73 @@
+[package]
+name = "echo"
+version = "1.0.0"
+description = "ECHO desktop shell"
+license = "GPL-3.0-or-later"
+default-run = "echo"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "echo_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+
+serde = { version = "1", features = ["derive"] }
+ts-rs = { version = "12", features = ["no-serde-warnings"] }
+rusqlite = { version = "0.43", features = ["bundled"] }
+lofty = "0.25.5"
+notify = "9.0.0"
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+sha2 = "0.11"
+
+[features]
+native-resources = []
+
+[target.'cfg(windows)'.dependencies]
+libloading = "0.9"
+tauri-plugin-single-instance = "=2.5.5"
+# The same WebView2 bindings Tauri and wry already use, for the one controller
+# call Tauri does not expose (see window.rs, `present`).
+webview2-com = "=0.39.1"
+
+serde_json = "1"
+reqwest = { version = "=0.13.5", default-features = false, features = ["rustls-no-provider"] }
+rustls = { version = "=0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
+webpki-roots = "=1.0.11"
+tokio = { version = "1", features = ["net", "rt", "sync", "time"] }
+url = "2"
+windows = { version = "=0.62.2", features = ["Foundation", "Media", "Storage_Streams", "Win32_System_WinRT", "Win32_Storage_FileSystem", "Win32_Graphics_Gdi", "Win32_NetworkManagement_Dns", "Win32_NetworkManagement_IpHelper", "Win32_NetworkManagement_Ndis", "Win32_Networking_WinSock", "Win32_System_Com", "Win32_System_LibraryLoader", "Win32_System_ProcessStatus", "Win32_System_Threading", "Win32_UI_Controls", "Win32_UI_HiDpi", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_Shell", "Win32_UI_Shell_Common", "Win32_UI_WindowsAndMessaging"] }
+
+[dev-dependencies]
+tempfile = "3"
+serde_json = "1"
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+
+# Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
+
+# Optimized but fast to link, for the library scale benchmarks. The release
+# profile's fat LTO would add minutes without changing SQLite or Lofty speed.
+[profile.scale]
+inherits = "release"
+lto = false
+codegen-units = 16
+panic = "unwind"
+strip = false

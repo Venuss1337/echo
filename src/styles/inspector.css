@@ -1,0 +1,208 @@
+/* The contextual surface. Today it shows the queue. ---------------------------- */
+.inspector {
+  z-index: 3;
+  display: flex;
+  grid-area: side;
+  flex-direction: column;
+  width: var(--inspector);
+  min-height: 0;
+  margin-inline-start: var(--gap);
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  background: color-mix(in oklab, var(--panel) 92%, transparent);
+  box-shadow: var(--lift-1);
+}
+.inspector-head {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  padding: 13px 10px 6px 20px;
+}
+.inspector-head h2 {
+  flex: 1;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.inspector-scroll {
+  flex: 1;
+  min-height: 0;
+  padding: 6px 10px 20px;
+  overflow: auto;
+}
+.inspector-section {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 18px 4px 4px 10px;
+}
+.inspector-section h3 {
+  color: var(--faint);
+  font: 400 13px/1.4 var(--sans);
+}
+.inspector-section small {
+  margin-inline-start: 7px;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+.queue-current,
+.queue-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  text-align: start;
+}
+.queue-current {
+  gap: 14px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.055);
+}
+.queue-current .art {
+  flex: none;
+  width: 58px;
+}
+.queue-track .art {
+  flex: none;
+  width: 40px;
+}
+.queue-copy {
+  display: grid;
+  min-width: 0;
+}
+.queue-copy > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.queue-copy > span {
+  font-weight: 550;
+}
+.queue-current .queue-copy > span {
+  font: 400 23px/1.14 var(--display);
+  letter-spacing: -0.015em;
+}
+.queue-copy small {
+  color: var(--muted);
+  font-size: var(--type-small);
+}
+.queue-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+  border-radius: 10px;
+}
+.queue-row:is(:hover, :focus-within) {
+  background: var(--hover);
+}
+.queue-track {
+  flex: 1;
+  padding: 7px 10px 7px 0;
+  border-radius: 10px;
+}
+.queue-row.played .queue-track {
+  padding-inline-start: 10px;
+}
+.queue-row.played {
+  opacity: 0.75;
+}
+.queue-row.unavailable .queue-copy span {
+  color: var(--faint);
+}
+.queue-row-actions {
+  position: absolute;
+  inset: 0 4px 0 auto;
+  display: flex;
+  align-items: center;
+  padding-inline-start: 26px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--panel) 92%, white) 26px
+  );
+  opacity: 0;
+}
+.queue-row:hover .queue-row-actions,
+.queue-row:focus-within .queue-row-actions {
+  opacity: 1;
+}
+.queue-row-actions .icon-button {
+  width: 28px;
+  height: 28px;
+}
+.queue-row-actions svg.lucide {
+  width: 15px;
+  height: 15px;
+}
+.queue-empty {
+  padding: 8px 10px;
+  color: var(--muted);
+}
+.played-toggle {
+  margin: 14px 4px 4px;
+}
+.grip {
+  flex: none;
+  padding: 10px 5px;
+  border-radius: 8px;
+  color: var(--faint);
+  cursor: grab;
+  touch-action: none;
+}
+.grip svg.lucide {
+  width: 15px;
+  height: 15px;
+}
+.dragging {
+  opacity: 0.4;
+}
+.drop-before::before,
+.drop-after::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: -1px 6px auto;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.drop-after::after {
+  inset: auto 6px -1px;
+}
+/* Without room beside the page it floats over it, above the dock. */
+@media (max-width: 900px) {
+  .inspector {
+    position: absolute;
+    z-index: 4;
+    /* Its containing block is its grid area, so it takes the whole window. */
+    grid-area: 1 / 1 / -1 / -1;
+    inset: var(--band) 0 122px auto;
+    width: 340px;
+    margin: 0;
+    background: var(--panel);
+    box-shadow: var(--lift-3);
+  }
+  .is-immersive .inspector {
+    bottom: 98px;
+  }
+  .shell[data-inspector] .canvas {
+    opacity: 0.22;
+  }
+}
+@media (max-width: 680px) {
+  .inspector,
+  .is-immersive .inspector {
+    inset: var(--band) 0 150px;
+    width: auto;
+  }
+}
+@media (hover: none) {
+  .queue-row-actions {
+    position: static;
+    opacity: 1;
+  }
+}

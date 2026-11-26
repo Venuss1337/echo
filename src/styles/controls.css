@@ -1,0 +1,385 @@
+.icon-button {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: var(--control);
+  height: var(--control);
+  border-radius: 50%;
+  color: var(--muted);
+}
+.icon-button:hover:not(:disabled) {
+  background: var(--hover);
+  color: var(--text);
+}
+.icon-button:active:not(:disabled) {
+  background: var(--press);
+}
+.icon-button[aria-pressed="true"] {
+  color: var(--accent);
+}
+.icon-button:disabled {
+  opacity: 0.36;
+}
+.icon-button.heart[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+.icon-button.ringed {
+  width: 40px;
+  height: 40px;
+  background: rgb(255 255 255 / 0.1);
+  color: var(--text);
+}
+.icon-button.ringed:hover:not(:disabled) {
+  background: rgb(255 255 255 / 0.17);
+}
+.icon-button.ringed[aria-pressed="true"] {
+  color: var(--accent);
+}
+.transport-primary,
+.transport-primary:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.transport-primary:hover:not(:disabled),
+.pill:hover:not(:disabled) {
+  background: color-mix(in oklab, var(--accent) 78%, white);
+}
+.transport-primary:active:not(:disabled),
+.pill:active:not(:disabled) {
+  background: color-mix(in oklab, var(--accent) 90%, black);
+}
+.pill,
+.quiet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+.pill {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 650;
+}
+.quiet {
+  padding-inline: 17px;
+  background: rgb(255 255 255 / 0.085);
+  color: var(--text);
+}
+.quiet:hover:not(:disabled) {
+  background: rgb(255 255 255 / 0.15);
+}
+.pill:disabled,
+.quiet:disabled {
+  opacity: 0.45;
+}
+:is(.pill, .quiet) svg.lucide {
+  width: 16px;
+  height: 16px;
+}
+.pill svg:is(.lucide-play, .lucide-pause) {
+  fill: currentColor;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.link-button,
+.text-button {
+  color: var(--accent);
+}
+.link-button {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--accent) 45%, transparent);
+  text-underline-offset: 3px;
+}
+.link-button:hover {
+  text-decoration-color: currentColor;
+}
+.text-button {
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: var(--type-small);
+}
+.text-button:hover {
+  background: var(--hover);
+}
+
+/* Sliders. A groove with a needle in it. ------------------------------------- */
+.slider {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+.transport-slider {
+  --track: rgb(255 255 255 / 0.18);
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  height: 22px;
+  border-radius: 6px;
+  background: transparent;
+}
+.transport-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent) var(--filled, 0%),
+    var(--track) var(--filled, 0%)
+  );
+}
+.transport-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 4px;
+  height: 14px;
+  margin-top: -5px;
+  border-radius: 2px;
+  background: color-mix(in oklab, var(--accent) 60%, white);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--raised) 100%, transparent);
+}
+.transport-slider:enabled:is(
+    :hover,
+    :active,
+    :focus-visible
+  )::-webkit-slider-thumb {
+  height: 18px;
+  margin-top: -7px;
+}
+.transport-slider:enabled {
+  cursor: pointer;
+}
+.transport-slider:disabled {
+  opacity: 0.45;
+}
+.transport-slider:disabled::-webkit-slider-thumb {
+  visibility: hidden;
+}
+.slider-preview {
+  position: absolute;
+  bottom: 24px;
+  padding: 3px 8px;
+  border-radius: 7px;
+  background: var(--over);
+  box-shadow: var(--lift-3);
+  color: var(--text);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+.timeline {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+.timeline > span:last-child {
+  text-align: end;
+}
+.transport-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.transport-primary {
+  width: 44px;
+  height: 44px;
+}
+.volume {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.volume .slider {
+  width: 84px;
+}
+.transport-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--caution);
+  font-size: 13px;
+}
+.transport-error svg.lucide {
+  width: 15px;
+  height: 15px;
+}
+
+/* Menus ---------------------------------------------------------------------- */
+.menu-scrim {
+  position: fixed;
+  z-index: 39;
+  inset: 0 0 auto;
+  height: var(--band);
+  app-region: no-drag;
+}
+.menu {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  min-width: 200px;
+  padding: 6px;
+  border-radius: 14px;
+  background: var(--over);
+  box-shadow: var(--lift-3);
+}
+.menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 34px;
+  padding: 0 14px 0 11px;
+  border-radius: 8px;
+  text-align: start;
+}
+.menu button svg.lucide {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+.menu button:not(:has(svg)) {
+  padding-inline-start: 39px;
+}
+.menu button:enabled:is(:hover, :focus-visible) {
+  background: var(--selected);
+  outline: 0;
+}
+.menu button:disabled {
+  opacity: 0.4;
+}
+.menu .danger,
+.menu .danger svg.lucide {
+  color: var(--danger);
+}
+
+/* Dialogs -------------------------------------------------------------------- */
+.dialog-layer {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--band) 16px 24px;
+  background: rgb(8 6 9 / 0.58);
+}
+.dialog {
+  width: min(440px, 100%);
+  max-height: 100%;
+  padding: 26px 28px 24px;
+  overflow: auto;
+  border-radius: 20px;
+  background: var(--over);
+  box-shadow: var(--lift-3);
+}
+.dialog:focus {
+  outline: 0;
+}
+.dialog h2 {
+  margin-bottom: 14px;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+.dialog-lede {
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+.dialog-lede strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+.choices {
+  display: grid;
+  gap: 8px;
+}
+.form-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.form-field span,
+.choices legend {
+  color: var(--muted);
+  font-size: 13px;
+}
+.dialog input:not([type="radio"]),
+.dialog textarea {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 14px;
+  border-radius: 11px;
+  background: rgb(0 0 0 / 0.3);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.16);
+  color: var(--text);
+  font: inherit;
+}
+.dialog textarea {
+  resize: vertical;
+}
+.new-playlist {
+  display: flex;
+  gap: 10px;
+}
+.playlist-picker {
+  max-height: 300px;
+  margin: 14px -10px 0;
+  overflow: auto;
+}
+.playlist-picker button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 10px;
+  text-align: start;
+}
+.playlist-picker button:hover {
+  background: var(--hover);
+}
+.playlist-picker .art {
+  flex: none;
+  width: 44px;
+}
+.playlist-picker span {
+  min-width: 0;
+}
+.playlist-picker strong,
+.playlist-picker small {
+  display: block;
+}
+.playlist-picker strong {
+  overflow-wrap: anywhere;
+  font-weight: 550;
+}
+.playlist-picker small {
+  color: var(--muted);
+}
+.choices label {
+  display: flex;
+  gap: 10px;
+}
+.choices input {
+  accent-color: var(--accent);
+}

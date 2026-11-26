@@ -1,0 +1,224 @@
+/* The dock. A record stands in it; its whole length runs along the foot. ------- */
+.dock-slot {
+  z-index: 5;
+  grid-area: canvas;
+  align-self: end;
+  min-width: 0;
+  padding: 0 clamp(6px, 1.5vw, 24px) var(--gap);
+  container: dock / inline-size;
+  pointer-events: none;
+}
+.dock {
+  position: relative;
+  display: grid;
+  grid-template:
+    "sleeve meta transport tools" 50px
+    "sleeve groove groove groove" 24px
+    / 104px minmax(0, 1fr) auto minmax(0, 1fr);
+  column-gap: 18px;
+  align-items: center;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding: 6px 18px 7px 16px;
+  border-radius: var(--radius-dock);
+  /* Opaque: the page passes behind it, and lists are text. */
+  background: linear-gradient(
+    color-mix(in oklab, var(--raised) 97%, white),
+    var(--raised)
+  );
+  box-shadow: var(--lift-2);
+  pointer-events: auto;
+}
+.dock-sleeve {
+  grid-area: sleeve;
+  align-self: end;
+  width: 104px;
+  margin-bottom: 3px;
+  border-radius: var(--radius-print);
+}
+.dock-sleeve .sleeve > .art {
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.12),
+    0 10px 26px -4px rgb(0 0 0 / 0.6);
+}
+.dock-sleeve.is-empty {
+  opacity: 0.75;
+}
+.dock-meta {
+  display: flex;
+  grid-area: meta;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding-inline-start: 20px;
+}
+.dock-copy {
+  display: grid;
+  min-width: 0;
+}
+.dock-copy strong {
+  overflow: hidden;
+  font: 400 var(--type-record) / 1.16 var(--display);
+  letter-spacing: -0.012em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dock-sub {
+  display: flex;
+  min-width: 0;
+  color: var(--muted);
+  font-size: var(--type-small);
+  white-space: nowrap;
+}
+.dock-artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dock-artist + .dock-state::before {
+  content: "·";
+  margin-inline: 7px;
+}
+.dock > .transport-buttons {
+  grid-area: transport;
+}
+.dock-tools {
+  display: flex;
+  grid-area: tools;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  min-width: 0;
+}
+.dock > .timeline {
+  grid-area: groove;
+  padding-inline-start: 20px;
+  margin-top: -2px;
+}
+.dock > .transport-error {
+  grid-column: 1 / -1;
+  padding: 8px 4px 5px;
+}
+.dock-idle {
+  grid-template:
+    "sleeve meta tools" 60px
+    / 78px minmax(0, 1fr) auto;
+}
+.dock-idle .dock-sleeve {
+  width: 78px;
+}
+
+/* On the wall: the record has left the dock, so the dock is only controls. */
+.is-immersive .dock {
+  grid-template:
+    "meta transport tools" 48px
+    "groove groove groove" 24px
+    / minmax(0, 1fr) auto minmax(0, 1fr);
+  max-width: 900px;
+  padding-inline: 20px;
+}
+.is-immersive .dock-sleeve {
+  display: none;
+}
+.is-immersive :is(.dock-meta, .dock > .timeline) {
+  padding-inline-start: 0;
+}
+.is-immersive .dock-copy {
+  position: absolute;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Medium: the volume opens upwards from its button. */
+@container dock (max-width: 830px) {
+  .dock {
+    grid-template-columns: 92px minmax(0, 1fr) auto auto;
+    column-gap: 14px;
+  }
+  .is-immersive .dock {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+  .dock-sleeve {
+    width: 92px;
+  }
+  .dock .transport-buttons {
+    gap: 4px;
+  }
+  .dock .volume .slider {
+    position: absolute;
+    bottom: calc(100% - 2px);
+    left: 50%;
+    width: 140px;
+    padding: 6px 14px;
+    border-radius: 14px;
+    background: var(--over);
+    box-shadow: var(--lift-3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+  .dock .volume:is(:hover, :focus-within) .slider {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@container dock (max-width: 700px) {
+  .dock-expand {
+    display: none;
+  }
+  .is-immersive .dock-expand {
+    display: inline-grid;
+  }
+}
+
+/* Narrow: three decks. Nothing essential is hidden. */
+@container dock (max-width: 660px) {
+  .dock,
+  .is-immersive .dock {
+    grid-template:
+      "sleeve meta tools" 48px
+      "transport transport transport" 46px
+      "groove groove groove" 24px
+      / 60px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    padding: 4px 12px 6px 10px;
+    border-radius: 20px;
+  }
+  .is-immersive .dock {
+    grid-template-columns: 0 minmax(0, 1fr) auto;
+  }
+  .dock-sleeve {
+    width: 60px;
+    margin-bottom: 1px;
+  }
+  .dock-meta {
+    padding-inline-start: 8px;
+  }
+  .dock-meta .heart {
+    display: none;
+  }
+  .is-immersive .dock-meta .heart {
+    display: inline-grid;
+  }
+  .dock-copy strong {
+    font-size: 19px;
+  }
+  .dock > .timeline {
+    padding: 0;
+  }
+  .dock .transport-buttons {
+    gap: 14px;
+  }
+  .dock-tools {
+    gap: 0;
+  }
+  .dock-idle {
+    grid-template: "sleeve meta tools" 52px / 60px minmax(0, 1fr) auto;
+  }
+  .dock-idle .dock-sleeve {
+    width: 60px;
+  }
+  .dock-idle .dock-meta {
+    padding-inline-start: 12px;
+  }
+}

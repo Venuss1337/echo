@@ -1,0 +1,173 @@
+/* Now Playing: one work on a wall lit by itself. ---------------------------------- */
+.is-immersive .exposure-art {
+  mask-image: none;
+  opacity: 0.78;
+}
+.is-immersive .exposure-light {
+  background:
+    radial-gradient(
+      52% 66% at 70% 46%,
+      color-mix(in oklab, var(--base) 70%, transparent) 12%,
+      color-mix(in oklab, var(--base) 46%, transparent) 58%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--base) 44%, transparent),
+      color-mix(in oklab, var(--base) 58%, transparent)
+    ),
+    linear-gradient(transparent 54%, var(--base) 108%);
+}
+.immersive {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0;
+  min-height: 100%;
+  padding: var(--band) 6cqi 112px 9.5cqi;
+  overflow: hidden;
+}
+.work-current {
+  width: min(58vh, 40cqi, 720px);
+}
+/* The lamp over the work. Lower while paused, not out. */
+.work-current::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -12% 30% -6% -6%;
+  background: radial-gradient(
+    46% 52% at 40% 48%,
+    color-mix(in oklab, var(--glow) 86%, transparent),
+    transparent 74%
+  );
+  pointer-events: none;
+}
+.immersive.at-rest .work-current::before {
+  opacity: 0.45;
+}
+.work-current .sleeve > .art {
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.12),
+    0 40px 90px -18px rgb(4 2 4 / 0.85);
+}
+.plaque {
+  z-index: 1;
+  min-width: 0;
+  /* The label stands clear of the turned echoes on any cover. */
+  margin-inline-start: calc(min(58vh, 40cqi, 720px) * 0.27);
+}
+.immersive h1 {
+  /* Only the display line reaches back across them. */
+  margin-inline-start: calc(min(58vh, 40cqi, 720px) * -0.135);
+  font-size: calc(clamp(60px, 11.6cqi, 236px) * var(--fit, 1));
+}
+.immersive :is(.title-longer, .title-longest) {
+  margin-inline-start: 0;
+}
+.immersive .byline {
+  margin-top: 20px;
+  font-size: clamp(17px, 1.7cqi, 27px);
+}
+.plaque-facts {
+  display: grid;
+  gap: 5px;
+  margin-top: clamp(18px, 4vh, 46px);
+  font-size: 14px;
+}
+.plaque-facts > div {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+}
+.plaque-facts dt {
+  color: var(--accent);
+}
+.plaque-facts dd {
+  overflow-wrap: anywhere;
+}
+.plaque-facts small {
+  margin-inline-start: 10px;
+  color: var(--muted);
+  font-size: inherit;
+}
+.plaque .actions {
+  margin-top: 22px;
+}
+.plaque .lede {
+  margin-top: 12px;
+  font-size: 16px;
+}
+/* The neighbouring works hang further along, cropped by the window. */
+.work {
+  position: absolute;
+  top: 50%;
+  width: 34vh;
+  margin-top: calc(-17vh - 26px);
+  filter: brightness(0.5) saturate(0.8);
+}
+.work :is(.sleeve)::before,
+.work :is(.sleeve)::after {
+  display: none;
+}
+.work-before {
+  left: calc(-34vh + 4.6cqi);
+}
+.work-after {
+  right: calc(-34vh + 5cqi);
+}
+.work:is(:hover, :focus-visible) {
+  filter: none;
+}
+
+@container canvas (max-width: 760px) {
+  .immersive {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: 20px;
+    padding: calc(var(--band) + 8px) 8cqi 150px;
+  }
+  .work-current {
+    width: min(62cqi, 36vh);
+  }
+  .plaque,
+  .plaque h1 {
+    margin: 0;
+  }
+  /* The dock carries the heart here. */
+  .plaque .heart {
+    display: none;
+  }
+  .immersive h1 {
+    font-size: calc(clamp(44px, 11.5cqi, 84px) * var(--fit, 1));
+  }
+  .immersive .title-longest {
+    --fit: 0.5;
+  }
+  .immersive .byline {
+    margin-top: 8px;
+  }
+  .immersive .sleeve-label {
+    display: none;
+  }
+  .plaque-facts {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  .plaque .actions {
+    margin-top: 12px;
+  }
+  .work {
+    display: none;
+  }
+}
+/* The field is outside the canvas, so it answers to the window. */
+@media (max-width: 780px) {
+  .is-immersive .exposure-light {
+    background: linear-gradient(
+      color-mix(in oklab, var(--base) 34%, transparent),
+      color-mix(in oklab, var(--base) 74%, transparent) 46%,
+      color-mix(in oklab, var(--base) 92%, transparent) 66%
+    );
+  }
+}
