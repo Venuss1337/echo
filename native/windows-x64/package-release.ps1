@@ -199,9 +199,11 @@ directory = "<path to this directory>"
     } | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath "$Destination/$name-release-manifest.json" -Encoding utf8
 
     Remove-Item -LiteralPath $work -Recurse -Force
-    Get-ChildItem -LiteralPath $Destination -File | Where-Object Name -ne 'SHA256SUMS.txt' | Sort-Object Name | ForEach-Object {
+    # LF line endings and no BOM, so `sha256sum -c` works on any platform.
+    $sums = Get-ChildItem -LiteralPath $Destination -File | Where-Object Name -ne 'SHA256SUMS.txt' | Sort-Object Name | ForEach-Object {
         "$((Get-FileHash -LiteralPath $_.FullName).Hash.ToLowerInvariant())  $($_.Name)"
-    } | Set-Content -LiteralPath "$Destination/SHA256SUMS.txt" -Encoding utf8
+    }
+    [IO.File]::WriteAllText("$Destination/SHA256SUMS.txt", ($sums -join "`n") + "`n")
     Get-Content -LiteralPath "$Destination/SHA256SUMS.txt"
 } finally {
     Pop-Location
