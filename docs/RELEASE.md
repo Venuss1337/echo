@@ -23,6 +23,7 @@ a staged decoder rebuilt from source:
 | `ECHO-<v>-rust-crates.tar.gz` | Locked Cargo dependency sources, including crates needed for offline resolution |
 | `ECHO-<v>-js-packages.tar.gz` | npm packages bundled into the renderer |
 | `ECHO-<v>-native-source.tar` | Decoder sources, recipes, receipts and notices |
+| `ECHO-<v>-license-election.tar.gz` | Decoder license choices, notice patches and the texts they cite |
 | `ECHO-<v>-THIRD_PARTY_NOTICES.txt`, `ECHO-<v>-third-party-inventory.json` | Application and renderer notices and component list |
 | `ECHO-<v>-release-manifest.json` | Commit, target, decoder digests and tool versions |
 | `SHA256SUMS.txt` | SHA-256 of every file above |
@@ -40,18 +41,20 @@ gh attestation verify ECHO-1.0.0-windows-x64-setup.exe --repo Venuss1337/echo
 1. On a release branch, update the version in the three files, the
    changelog and any documentation that mentions the version. Merge after
    the Verify workflow passes.
-2. Confirm the open items in [Licensing](LICENSING.md#release-approval-required)
-   are approved for this release, and run the
+2. Review the [decoder license choices](LICENSING.md#decoder-license-choices)
+   for any changed native component (regenerate its election patch with
+   `scripts/elect-gplv3.ts`), and run the
    [manual acceptance checklist](TESTING.md#manual-acceptance) on the
    candidate where hardware is available. Record what was and was not
    checked.
 3. Tag the verified commit (`git tag -s v<version>` if you sign tags) and
    push the tag.
-4. Run **Actions → Release** with the tag, `redistribution-approved` and
-   `draft` enabled once the maintainer has approved redistribution. The workflow
+4. Run **Actions → Release** with the tag, and with `redistribution-approved`
+   and `draft` enabled once the maintainer has approved the build. The workflow
    runs the full verification suite and security audit, rebuilds the decoder
    from pinned sources and compares it with the committed evidence, runs the
-   native suites, packages the release, installs and uninstalls the
+   native suites, checks the license election patches against the pristine
+   archives, packages the release, installs and uninstalls the
    installer, verifies checksums, attests the assets and attaches them to a
    draft release.
 5. Download the draft's assets, verify checksums and attestations, install

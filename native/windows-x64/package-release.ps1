@@ -8,6 +8,7 @@
 #   ECHO-<version>-rust-crates.tar.gz          every crate the Windows build compiles
 #   ECHO-<version>-js-packages.tar.gz          the npm packages bundled into the UI
 #   ECHO-<version>-native-source.tar           decoder sources, recipes and build receipts
+#   ECHO-<version>-license-election.tar.gz    decoder license choices and notice patches
 #   ECHO-<version>-THIRD_PARTY_NOTICES.txt     application and renderer notices
 #   ECHO-<version>-third-party-inventory.json  machine-readable component list
 #   ECHO-<version>-release-manifest.json       commit, toolchain and input digests
@@ -76,6 +77,13 @@ try {
     foreach ($file in (Get-ChildItem -LiteralPath $notices -File -Recurse)) {
         $target = [IO.Path]::GetRelativePath($notices, $file.FullName).Replace('\', '/')
         $resources[$file.FullName] = "notices/native/$target"
+    }
+    # The license choices made for the decoder's statically linked libraries
+    # and the upstream texts they rely on travel with the decoder notices.
+    $election = Join-Path $PSScriptRoot 'license-election'
+    $resources["$election/LICENSE-ELECTION.txt"] = 'notices/native/LICENSE-ELECTION.txt'
+    foreach ($file in (Get-ChildItem -LiteralPath "$election/texts" -File)) {
+        $resources[$file.FullName] = "notices/native/texts/$($file.Name)"
     }
     $resources["$appNotices/THIRD_PARTY_NOTICES.txt"] = 'notices/THIRD_PARTY_NOTICES.txt'
     $resources["$repo/LICENSE"] = 'LICENSE.txt'
@@ -167,6 +175,10 @@ directory = "<path to this directory>"
     $native = Join-Path $work 'native-source'
     & "$PSScriptRoot/package-sources.ps1" -Root $Root -ResourceRoot $ResourceRoot -SourceCache "$Root/package-sources" -Destination $native | Out-Null
     Move-Item -LiteralPath "$native.tar" -Destination "$Destination/$name-native-source.tar"
+
+    # The election statement, its notice patches and the texts it cites.
+    tar -czf "$Destination/$name-license-election.tar.gz" -C $PSScriptRoot license-election
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot archive the license election' }
 
     Copy-Item -LiteralPath "$appNotices/THIRD_PARTY_NOTICES.txt" -Destination "$Destination/$name-THIRD_PARTY_NOTICES.txt"
     Copy-Item -LiteralPath "$appNotices/third-party-inventory.json" -Destination "$Destination/$name-third-party-inventory.json"

@@ -1,0 +1,19 @@
+COPYING.GPLv2	license text, kept verbatim
+COPYING.GPLv3	license text, kept verbatim
+COPYING.LGPLv2.1	license text, kept verbatim
+COPYING.LGPLv3	license text, kept verbatim
+Changelog	- remaining GPL parts in AC-3 decoder converted to LGPL
+LICENSE.md	license text, kept verbatim
+README.md	FFmpeg codebase is mainly LGPL-licensed with optional components licensed under
+configure	enabled gpl && enable lgpl_gpl # Files that are marked as LGPL but some developers prefer only building them with --enable-gpl
+doc/developer.texi	@uref{http://www.gnu.org/licenses/lgpl-2.1.html, LGPL 2.1},
+doc/general_contents.texi	incompatible to the LGPL version 2.1 and GPL version 2. You have to
+doc/indevs.texi	Portable, open source (LGPL) software implementation. Includes
+doc/rate_distortion.txt	Copyright: LGPL
+doc/writing_filters.txt	First chunk is the copyright. Most filters are LGPL, and we are assuming
+fftools/opt_common.c	#elif CONFIG_LGPLV3
+libavcodec/cpia.c	* This decoder is based on the LGPL code available at
+libavcodec/libmpeghdec.c	* as the initial licensor does not interpret the LGPL-2.1 as requiring
+libavfilter/vf_owdenoise.c	// <michaelni> durandal_1707, if you do all the "todo" points from vf_owdenoise.c that are in that file since 2013 then sure i would be more than happy to relic
+libavfilter/vf_unsharp.c	* Relicensed to the LGPL with permission from Remi Guyomarch.
+tools/check_commit_msg.sh	# Based on lint_commit_msg.py from mpv (LGPL).

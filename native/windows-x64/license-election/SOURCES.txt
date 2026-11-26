@@ -1,0 +1,13 @@
+# Pristine inputs of the GPLv3 election patches. Each patch applies with
+# "patch -p1" in the named directory after extracting the archive. The
+# archives are the reviewed decoder inputs pinned in build.sh and
+# evidence/local/source-inventory.json; the MSYS2 source packages contain the
+# upstream archive named in the third column.
+#
+# patch                                    archive (SHA-256)                                                     directory
+libplacebo-gplv3-election.patch            libplacebo-v7.387.0.tar.gz (3bf5d72786682c194387c33d563872f6bfe202a9816f9dde6535a31a9b2e0d74)             libplacebo-v7.387.0
+mpv-gplv3-election.patch                   mpv.tar.gz (a4a79fa6ca728762ac407734b0f93dbcbba250c3bb3bf97b77a342042be802e4)                             mpv-b0841e8c4d156b8403dc1876c4cbd9011eb583f3
+ffmpeg-gplv3-election.patch                ffmpeg-9.1.tar.xz (1a4d394ae63d190a526cd052eb4415c156b5c5e2df37efab41a7de0b8fde2433)                      ffmpeg-9.1
+fribidi-gplv3-election.patch               mingw-w64-fribidi-1.0.18-1.src.tar.zst (7cd0b6290516a7d61b1508d79c18d2661170a0e3189582ded99bd9879cc159b2) > fribidi-1.0.18.tar.xz    fribidi-1.0.18
+libiconv-gplv3-election.patch              mingw-w64-libiconv-1.19.1-1.src.tar.zst (ed46bb1b524ad9bd9d843091bf7b18ab23e5cd21fef6de743c8c943bdc11dabe) > libiconv-1.19.1.tar.gz    libiconv-1.19.1
+gettext-runtime-intl-gplv3-election.patch  mingw-w64-gettext-1.0-1.src.tar.zst (cca0d0c8f60353faccc5ad40405240014e4a7ccc8b1c6ca9f4626aef3097d26e) > gettext-1.0.tar.lz    gettext-1.0/gettext-runtime/intl

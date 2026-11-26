@@ -3,7 +3,7 @@
 All notable changes to ECHO are documented here. ECHO follows
 [Semantic Versioning](https://semver.org/).
 
-## 1.0.0 — unreleased
+## 1.0.0 — 2026-11-26
 
 The first public release.
 

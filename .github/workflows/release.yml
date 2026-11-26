@@ -92,6 +92,37 @@ jobs:
           ./native/windows-x64/test-local.ps1 -ResourceRoot $stage
           ./native/windows-x64/test-live.ps1 -ResourceRoot $stage
           ./native/windows-x64/collect-notices.ps1 -Root $root -ResourceRoot $stage -SourceCache "$root/package-sources"
+      - name: Verify the license election patches against the pristine sources
+        shell: bash
+        run: |
+          # The notice patches must apply to the exact reviewed inputs. The
+          # gettext archive is lzip-compressed, which this runner cannot
+          # read; its patch is checked when it is regenerated.
+          root="$(cygpath -u "$RUNNER_TEMP")/echo-native"
+          zstd="$root/msys64/usr/bin/zstd.exe"
+          patches="$PWD/native/windows-x64/license-election/patches"
+          work="$(mktemp -d)"
+          check() {
+            cd "$work/$1"
+            patch -p1 --dry-run --quiet < "$patches/$2-gplv3-election.patch" > /dev/null
+            cd - > /dev/null
+            echo "$2 election patch applies"
+          }
+          tar -xzf "$root/libplacebo-v7.387.0.tar.gz" -C "$work"
+          check libplacebo-v7.387.0 libplacebo
+          tar -xzf "$root/mpv.tar.gz" -C "$work"
+          check mpv-b0841e8c4d156b8403dc1876c4cbd9011eb583f3 mpv
+          tar -xJf "$root/ffmpeg-9.1.tar.xz" -C "$work"
+          check ffmpeg-9.1 ffmpeg
+          "$zstd" -dc "$root/package-sources/mingw-w64-fribidi-1.0.18-1.src.tar.zst" > "$work/fribidi.tar"
+          tar -xOf "$work/fribidi.tar" mingw-w64-fribidi/fribidi-1.0.18.tar.xz > "$work/fribidi.tar.xz"
+          tar -xJf "$work/fribidi.tar.xz" -C "$work"
+          check fribidi-1.0.18 fribidi
+          "$zstd" -dc "$root/package-sources/mingw-w64-libiconv-1.19.1-1.src.tar.zst" > "$work/libiconv.tar"
+          tar -xOf "$work/libiconv.tar" mingw-w64-libiconv/libiconv-1.19.1.tar.gz > "$work/libiconv.tar.gz"
+          tar -xzf "$work/libiconv.tar.gz" -C "$work"
+          check libiconv-1.19.1 libiconv
+          rm -rf "$work"
       - name: Package the release
         shell: pwsh
         run: |

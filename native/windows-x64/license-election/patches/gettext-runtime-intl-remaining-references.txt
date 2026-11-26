@@ -1,0 +1,9 @@
+COPYING.LIB	license text, kept verbatim
+ChangeLog	Update the GPL and LGPL text.
+configure	GL_COND_OBJ_GETCWD_LGPL_FALSE
+gnulib-lib/Makefile.am	if GL_COND_OBJ_GETCWD_LGPL
+gnulib-lib/Makefile.in	@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_5 = getcwd-lgpl.c
+gnulib-m4/getcwd.m4	AC_DEFUN([gl_FUNC_GETCWD_LGPL],
+gnulib-m4/gnulib-cache.m4	gl_LGPL([2])
+gnulib-m4/gnulib-comp.m4	gl_FUNC_GETCWD_LGPL
+libintl.rc	VALUE "FileDescription", "LGPLed libintl for Windows\0"

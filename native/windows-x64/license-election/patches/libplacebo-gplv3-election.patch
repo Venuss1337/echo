@@ -1,0 +1,3688 @@
+diff --git a/README.md b/README.md
+index 6fd8754..51006d6 100644
+--- a/README.md
++++ b/README.md
+@@ -231,7 +231,7 @@ contributions of others, especially support for windows.
+ 
+ ### License
+ 
+-libplacebo is currently available under the terms of the LGPLv2.1 (or later)
++libplacebo is currently available under the terms of the GPLv3 (or later)
+ license. However, it's possible to release it under a more permissive license
+ (e.g. BSD2) if a use case emerges.
+ 
+diff --git a/meson.build b/meson.build
+index dba8fbf..01cda5c 100644
+--- a/meson.build
++++ b/meson.build
+@@ -1,5 +1,5 @@
+ project('libplacebo', ['c', 'cpp'],
+-  license: 'LGPL2.1+',
++  license: 'GPLv3+',
+   default_options: [
+     'buildtype=debugoptimized',
+     'warning_level=2',
+diff --git a/src/cache.c b/src/cache.c
+index 52be554..970108b 100644
+--- a/src/cache.c
++++ b/src/cache.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/cache.h b/src/cache.h
+index 65d06de..f22742b 100644
+--- a/src/cache.h
++++ b/src/cache.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/colorspace.c b/src/colorspace.c
+index 50dfcdb..ec1d650 100644
+--- a/src/colorspace.c
++++ b/src/colorspace.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/colorspace.h b/src/colorspace.h
+index 9061e95..a9fa75a 100644
+--- a/src/colorspace.h
++++ b/src/colorspace.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/common.c b/src/common.c
+index 163c154..faf5491 100644
+--- a/src/common.c
++++ b/src/common.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/common.h b/src/common.h
+index 121cd1c..7de52bb 100644
+--- a/src/common.h
++++ b/src/common.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/compositor.c b/src/compositor.c
+index 89a37e2..a5f7add 100644
+--- a/src/compositor.c
++++ b/src/compositor.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/convert.cc b/src/convert.cc
+index 52f122c..4cd4a69 100644
+--- a/src/convert.cc
++++ b/src/convert.cc
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/common.h b/src/d3d11/common.h
+index e14b709..16a9a96 100644
+--- a/src/d3d11/common.h
++++ b/src/d3d11/common.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/context.c b/src/d3d11/context.c
+index 043eb5d..e656435 100644
+--- a/src/d3d11/context.c
++++ b/src/d3d11/context.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/formats.c b/src/d3d11/formats.c
+index da56b57..91d53ef 100644
+--- a/src/d3d11/formats.c
++++ b/src/d3d11/formats.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/formats.h b/src/d3d11/formats.h
+index 08336c0..e98db34 100644
+--- a/src/d3d11/formats.h
++++ b/src/d3d11/formats.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/gpu.c b/src/d3d11/gpu.c
+index a4a003d..8545d82 100644
+--- a/src/d3d11/gpu.c
++++ b/src/d3d11/gpu.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/gpu.h b/src/d3d11/gpu.h
+index c6d842e..26efd44 100644
+--- a/src/d3d11/gpu.h
++++ b/src/d3d11/gpu.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/gpu_buf.c b/src/d3d11/gpu_buf.c
+index 955e6e1..ab68035 100644
+--- a/src/d3d11/gpu_buf.c
++++ b/src/d3d11/gpu_buf.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/gpu_pass.c b/src/d3d11/gpu_pass.c
+index e47d5fa..2cce02c 100644
+--- a/src/d3d11/gpu_pass.c
++++ b/src/d3d11/gpu_pass.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/gpu_tex.c b/src/d3d11/gpu_tex.c
+index d63fc17..153e8ad 100644
+--- a/src/d3d11/gpu_tex.c
++++ b/src/d3d11/gpu_tex.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/stubs.c b/src/d3d11/stubs.c
+index b3f259c..c5726db 100644
+--- a/src/d3d11/stubs.c
++++ b/src/d3d11/stubs.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/swapchain.c b/src/d3d11/swapchain.c
+index 3323704..c1fe62c 100644
+--- a/src/d3d11/swapchain.c
++++ b/src/d3d11/swapchain.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/utils.c b/src/d3d11/utils.c
+index b8709e3..ac1d0b2 100644
+--- a/src/d3d11/utils.c
++++ b/src/d3d11/utils.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/d3d11/utils.h b/src/d3d11/utils.h
+index 86b4072..9ff1cc6 100644
+--- a/src/d3d11/utils.h
++++ b/src/d3d11/utils.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/dispatch.c b/src/dispatch.c
+index 4bae988..221a2bc 100644
+--- a/src/dispatch.c
++++ b/src/dispatch.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/dispatch.h b/src/dispatch.h
+index 66c10f6..0930811 100644
+--- a/src/dispatch.h
++++ b/src/dispatch.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/dither.c b/src/dither.c
+index 13f68e4..3fcca8d 100644
+--- a/src/dither.c
++++ b/src/dither.c
+@@ -5,16 +5,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  *
+  * The original code is taken from mpv, under the same license.
+diff --git a/src/dummy.c b/src/dummy.c
+index cd80080..c427db7 100644
+--- a/src/dummy.c
++++ b/src/dummy.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/filters.c b/src/filters.c
+index 0cbc573..13399ef 100644
+--- a/src/filters.c
++++ b/src/filters.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/filters.h b/src/filters.h
+index c3227db..29379d7 100644
+--- a/src/filters.h
++++ b/src/filters.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/format.c b/src/format.c
+index 458d493..012c02f 100644
+--- a/src/format.c
++++ b/src/format.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/gamut_mapping.c b/src/gamut_mapping.c
+index 36edc97..2570f55 100644
+--- a/src/gamut_mapping.c
++++ b/src/gamut_mapping.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/glslang.cc b/src/glsl/glslang.cc
+index 2bc923c..a20829f 100644
+--- a/src/glsl/glslang.cc
++++ b/src/glsl/glslang.cc
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/glslang.h b/src/glsl/glslang.h
+index a5965a5..ee6aa9d 100644
+--- a/src/glsl/glslang.h
++++ b/src/glsl/glslang.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/glslang_resources.c b/src/glsl/glslang_resources.c
+index a111c15..478f78f 100644
+--- a/src/glsl/glslang_resources.c
++++ b/src/glsl/glslang_resources.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/spirv.c b/src/glsl/spirv.c
+index 8317ed7..75c2d3c 100644
+--- a/src/glsl/spirv.c
++++ b/src/glsl/spirv.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/spirv.h b/src/glsl/spirv.h
+index fa4494a..85155ab 100644
+--- a/src/glsl/spirv.h
++++ b/src/glsl/spirv.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/spirv_glslang.c b/src/glsl/spirv_glslang.c
+index 518b55e..7f2afa6 100644
+--- a/src/glsl/spirv_glslang.c
++++ b/src/glsl/spirv_glslang.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/spirv_shaderc.c b/src/glsl/spirv_shaderc.c
+index 3afd750..b2c077a 100644
+--- a/src/glsl/spirv_shaderc.c
++++ b/src/glsl/spirv_shaderc.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/glsl/utils.h b/src/glsl/utils.h
+index 965ea9e..e50e437 100644
+--- a/src/glsl/utils.h
++++ b/src/glsl/utils.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/gpu/utils.c b/src/gpu/utils.c
+index b81f70e..06ca753 100644
+--- a/src/gpu/utils.c
++++ b/src/gpu/utils.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/gpu.c b/src/gpu.c
+index e5a320e..34a42c6 100644
+--- a/src/gpu.c
++++ b/src/gpu.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/gpu.h b/src/gpu.h
+index c38de61..f896073 100644
+--- a/src/gpu.h
++++ b/src/gpu.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/hash.h b/src/hash.h
+index f858458..cb47c69 100644
+--- a/src/hash.h
++++ b/src/hash.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/cache.h b/src/include/libplacebo/cache.h
+index 9dd72d3..c3a1f0d 100644
+--- a/src/include/libplacebo/cache.h
++++ b/src/include/libplacebo/cache.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/colorspace.h b/src/include/libplacebo/colorspace.h
+index 5243725..c6e9083 100644
+--- a/src/include/libplacebo/colorspace.h
++++ b/src/include/libplacebo/colorspace.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/common.h b/src/include/libplacebo/common.h
+index e69ca6a..44779e9 100644
+--- a/src/include/libplacebo/common.h
++++ b/src/include/libplacebo/common.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/compositor.h b/src/include/libplacebo/compositor.h
+index 58e8c57..0dd7a1e 100644
+--- a/src/include/libplacebo/compositor.h
++++ b/src/include/libplacebo/compositor.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/config.h.in b/src/include/libplacebo/config.h.in
+index 5279f3c..7637b10 100644
+--- a/src/include/libplacebo/config.h.in
++++ b/src/include/libplacebo/config.h.in
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/d3d11.h b/src/include/libplacebo/d3d11.h
+index c4fa958..3db145e 100644
+--- a/src/include/libplacebo/d3d11.h
++++ b/src/include/libplacebo/d3d11.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/dispatch.h b/src/include/libplacebo/dispatch.h
+index 141055c..3b63212 100644
+--- a/src/include/libplacebo/dispatch.h
++++ b/src/include/libplacebo/dispatch.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/dither.h b/src/include/libplacebo/dither.h
+index 84f17c7..5dbc23e 100644
+--- a/src/include/libplacebo/dither.h
++++ b/src/include/libplacebo/dither.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/dummy.h b/src/include/libplacebo/dummy.h
+index c298438..b119fa7 100644
+--- a/src/include/libplacebo/dummy.h
++++ b/src/include/libplacebo/dummy.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/filters.h b/src/include/libplacebo/filters.h
+index 248f7bb..33468e3 100644
+--- a/src/include/libplacebo/filters.h
++++ b/src/include/libplacebo/filters.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/gamut_mapping.h b/src/include/libplacebo/gamut_mapping.h
+index 6b2fb44..27e2244 100644
+--- a/src/include/libplacebo/gamut_mapping.h
++++ b/src/include/libplacebo/gamut_mapping.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/gpu.h b/src/include/libplacebo/gpu.h
+index fcaca19..5afb94e 100644
+--- a/src/include/libplacebo/gpu.h
++++ b/src/include/libplacebo/gpu.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/log.h b/src/include/libplacebo/log.h
+index b24c931..55d3221 100644
+--- a/src/include/libplacebo/log.h
++++ b/src/include/libplacebo/log.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/opengl.h b/src/include/libplacebo/opengl.h
+index 168281e..cbda408 100644
+--- a/src/include/libplacebo/opengl.h
++++ b/src/include/libplacebo/opengl.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/options.h b/src/include/libplacebo/options.h
+index a0184bf..b4e0430 100644
+--- a/src/include/libplacebo/options.h
++++ b/src/include/libplacebo/options.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/renderer.h b/src/include/libplacebo/renderer.h
+index 2404437..a01dfd7 100644
+--- a/src/include/libplacebo/renderer.h
++++ b/src/include/libplacebo/renderer.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders/colorspace.h b/src/include/libplacebo/shaders/colorspace.h
+index e3f28bb..7c825c5 100644
+--- a/src/include/libplacebo/shaders/colorspace.h
++++ b/src/include/libplacebo/shaders/colorspace.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders/custom.h b/src/include/libplacebo/shaders/custom.h
+index a4eec69..ee3b8bf 100644
+--- a/src/include/libplacebo/shaders/custom.h
++++ b/src/include/libplacebo/shaders/custom.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders/deinterlacing.h b/src/include/libplacebo/shaders/deinterlacing.h
+index 9bda2e1..804fc92 100644
+--- a/src/include/libplacebo/shaders/deinterlacing.h
++++ b/src/include/libplacebo/shaders/deinterlacing.h
+@@ -1,7 +1,7 @@
+ 
+ /*
+  * This file is part of libplacebo, which is normally licensed under the terms
+- * of the LGPL v2.1+. However, this file (film_grain.h) is also available under
++ * of the GPLv3+. However, this file (film_grain.h) is also available under
+  * the terms of the more permissive MIT license:
+  *
+  * Copyright (c) 2018-2019 Niklas Haas
+diff --git a/src/include/libplacebo/shaders/dithering.h b/src/include/libplacebo/shaders/dithering.h
+index 9146c81..3f21c4f 100644
+--- a/src/include/libplacebo/shaders/dithering.h
++++ b/src/include/libplacebo/shaders/dithering.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders/film_grain.h b/src/include/libplacebo/shaders/film_grain.h
+index 8a9c78b..65ec627 100644
+--- a/src/include/libplacebo/shaders/film_grain.h
++++ b/src/include/libplacebo/shaders/film_grain.h
+@@ -1,6 +1,6 @@
+ /*
+  * This file is part of libplacebo, which is normally licensed under the terms
+- * of the LGPL v2.1+. However, this file (film_grain.h) is also available under
++ * of the GPLv3+. However, this file (film_grain.h) is also available under
+  * the terms of the more permissive MIT license:
+  *
+  * Copyright (c) 2018-2019 Niklas Haas
+diff --git a/src/include/libplacebo/shaders/icc.h b/src/include/libplacebo/shaders/icc.h
+index 35933ea..1e19670 100644
+--- a/src/include/libplacebo/shaders/icc.h
++++ b/src/include/libplacebo/shaders/icc.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders/lut.h b/src/include/libplacebo/shaders/lut.h
+index 6e30ddc..77d840b 100644
+--- a/src/include/libplacebo/shaders/lut.h
++++ b/src/include/libplacebo/shaders/lut.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders/sampling.h b/src/include/libplacebo/shaders/sampling.h
+index 20eb078..19fbdb9 100644
+--- a/src/include/libplacebo/shaders/sampling.h
++++ b/src/include/libplacebo/shaders/sampling.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/shaders.h b/src/include/libplacebo/shaders.h
+index 96b9525..658d3a6 100644
+--- a/src/include/libplacebo/shaders.h
++++ b/src/include/libplacebo/shaders.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/swapchain.h b/src/include/libplacebo/swapchain.h
+index b53aa5c..5d6a893 100644
+--- a/src/include/libplacebo/swapchain.h
++++ b/src/include/libplacebo/swapchain.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/tone_mapping.h b/src/include/libplacebo/tone_mapping.h
+index b5e8aa4..6f036d1 100644
+--- a/src/include/libplacebo/tone_mapping.h
++++ b/src/include/libplacebo/tone_mapping.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/dav1d.h b/src/include/libplacebo/utils/dav1d.h
+index ece97c5..778e816 100644
+--- a/src/include/libplacebo/utils/dav1d.h
++++ b/src/include/libplacebo/utils/dav1d.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/dav1d_internal.h b/src/include/libplacebo/utils/dav1d_internal.h
+index 7599220..195d10f 100644
+--- a/src/include/libplacebo/utils/dav1d_internal.h
++++ b/src/include/libplacebo/utils/dav1d_internal.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/dolbyvision.h b/src/include/libplacebo/utils/dolbyvision.h
+index 6d4d72e..39c454a 100644
+--- a/src/include/libplacebo/utils/dolbyvision.h
++++ b/src/include/libplacebo/utils/dolbyvision.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/frame_queue.h b/src/include/libplacebo/utils/frame_queue.h
+index bccef19..4cbc100 100644
+--- a/src/include/libplacebo/utils/frame_queue.h
++++ b/src/include/libplacebo/utils/frame_queue.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/libav.h b/src/include/libplacebo/utils/libav.h
+index a067be5..772f5cf 100644
+--- a/src/include/libplacebo/utils/libav.h
++++ b/src/include/libplacebo/utils/libav.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/libav_internal.h b/src/include/libplacebo/utils/libav_internal.h
+index 74ee578..4708a35 100644
+--- a/src/include/libplacebo/utils/libav_internal.h
++++ b/src/include/libplacebo/utils/libav_internal.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/utils/upload.h b/src/include/libplacebo/utils/upload.h
+index 9e8d436..2d149be 100644
+--- a/src/include/libplacebo/utils/upload.h
++++ b/src/include/libplacebo/utils/upload.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/include/libplacebo/vulkan.h b/src/include/libplacebo/vulkan.h
+index c5b3a1d..c735e84 100644
+--- a/src/include/libplacebo/vulkan.h
++++ b/src/include/libplacebo/vulkan.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/json.h b/src/json.h
+index 4389a8c..6a9f5e3 100644
+--- a/src/json.h
++++ b/src/json.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/log.c b/src/log.c
+index 0829dd3..5ad7ad4 100644
+--- a/src/log.c
++++ b/src/log.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/log.h b/src/log.h
+index dcf8d28..c805d25 100644
+--- a/src/log.h
++++ b/src/log.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/common.h b/src/opengl/common.h
+index c84c69f..dd14a89 100644
+--- a/src/opengl/common.h
++++ b/src/opengl/common.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/context.c b/src/opengl/context.c
+index 3bbd87e..26ac5dc 100644
+--- a/src/opengl/context.c
++++ b/src/opengl/context.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/formats.c b/src/opengl/formats.c
+index 9f24cae..434c09f 100644
+--- a/src/opengl/formats.c
++++ b/src/opengl/formats.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/formats.h b/src/opengl/formats.h
+index b98c872..d7fb2b0 100644
+--- a/src/opengl/formats.h
++++ b/src/opengl/formats.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/gpu.c b/src/opengl/gpu.c
+index 0ac0696..213e192 100644
+--- a/src/opengl/gpu.c
++++ b/src/opengl/gpu.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/gpu.h b/src/opengl/gpu.h
+index 3681f30..3131c4e 100644
+--- a/src/opengl/gpu.h
++++ b/src/opengl/gpu.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/gpu_pass.c b/src/opengl/gpu_pass.c
+index c5bcf52..a65c6d1 100644
+--- a/src/opengl/gpu_pass.c
++++ b/src/opengl/gpu_pass.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/gpu_tex.c b/src/opengl/gpu_tex.c
+index 69e118b..b4fe274 100644
+--- a/src/opengl/gpu_tex.c
++++ b/src/opengl/gpu_tex.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/stubs.c b/src/opengl/stubs.c
+index 20395f9..ba82e83 100644
+--- a/src/opengl/stubs.c
++++ b/src/opengl/stubs.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/swapchain.c b/src/opengl/swapchain.c
+index fd296d9..a48c24e 100644
+--- a/src/opengl/swapchain.c
++++ b/src/opengl/swapchain.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/utils.c b/src/opengl/utils.c
+index 81be67a..0dfc3e5 100644
+--- a/src/opengl/utils.c
++++ b/src/opengl/utils.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/opengl/utils.h b/src/opengl/utils.h
+index 0be229d..cbede89 100644
+--- a/src/opengl/utils.h
++++ b/src/opengl/utils.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/options.c b/src/options.c
+index 5fb798b..0237c46 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/options.h b/src/options.h
+index daf1ab0..de70019 100644
+--- a/src/options.h
++++ b/src/options.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/os.h b/src/os.h
+index 386f0cb..a4da7c8 100644
+--- a/src/os.h
++++ b/src/os.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_alloc.c b/src/pl_alloc.c
+index 64eeda7..4b24e4e 100644
+--- a/src/pl_alloc.c
++++ b/src/pl_alloc.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_alloc.h b/src/pl_alloc.h
+index 92e432c..a8e6049 100644
+--- a/src/pl_alloc.h
++++ b/src/pl_alloc.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_assert.h b/src/pl_assert.h
+index b4c6656..8217fe9 100644
+--- a/src/pl_assert.h
++++ b/src/pl_assert.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_clock.h b/src/pl_clock.h
+index 541ef0b..4d5a04a 100644
+--- a/src/pl_clock.h
++++ b/src/pl_clock.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_string.c b/src/pl_string.c
+index 59b2fa2..14c8cc9 100644
+--- a/src/pl_string.c
++++ b/src/pl_string.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_string.h b/src/pl_string.h
+index 45156f4..ec0e1f3 100644
+--- a/src/pl_string.h
++++ b/src/pl_string.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_thread.h b/src/pl_thread.h
+index 7a5ae47..56a4539 100644
+--- a/src/pl_thread.h
++++ b/src/pl_thread.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_thread_pthread.h b/src/pl_thread_pthread.h
+index 5910650..5c749f4 100644
+--- a/src/pl_thread_pthread.h
++++ b/src/pl_thread_pthread.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/pl_thread_win32.h b/src/pl_thread_win32.h
+index ef68d50..702d82d 100644
+--- a/src/pl_thread_win32.h
++++ b/src/pl_thread_win32.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/renderer.c b/src/renderer.c
+index d9bc5e0..4e653d6 100644
+--- a/src/renderer.c
++++ b/src/renderer.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/scene.c b/src/scene.c
+index 7780bf6..986aad9 100644
+--- a/src/scene.c
++++ b/src/scene.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/colorspace.c b/src/shaders/colorspace.c
+index f9e8120..e3ef670 100644
+--- a/src/shaders/colorspace.c
++++ b/src/shaders/colorspace.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/custom.c b/src/shaders/custom.c
+index 7d3e059..7c1ab5f 100644
+--- a/src/shaders/custom.c
++++ b/src/shaders/custom.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/custom_mpv.c b/src/shaders/custom_mpv.c
+index fde6dcd..50e602d 100644
+--- a/src/shaders/custom_mpv.c
++++ b/src/shaders/custom_mpv.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/deinterlacing.c b/src/shaders/deinterlacing.c
+index c439a53..56eeacf 100644
+--- a/src/shaders/deinterlacing.c
++++ b/src/shaders/deinterlacing.c
+@@ -3,16 +3,16 @@
+  * Copyright (C) 2018 Philip Langdale <philipl@overt.org>
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/dithering.c b/src/shaders/dithering.c
+index c1d511d..ddcceb9 100644
+--- a/src/shaders/dithering.c
++++ b/src/shaders/dithering.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+@@ -292,16 +292,16 @@ done: ;
+ /* Error diffusion code is taken from mpv, original copyright (c) 2019 Bin Jin
+  *
+  * mpv is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * mpv is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with mpv.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/film_grain.c b/src/shaders/film_grain.c
+index b1d25ff..17b32d2 100644
+--- a/src/shaders/film_grain.c
++++ b/src/shaders/film_grain.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/film_grain.h b/src/shaders/film_grain.h
+index 5d8e04a..fab6061 100644
+--- a/src/shaders/film_grain.h
++++ b/src/shaders/film_grain.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/film_grain_h274.c b/src/shaders/film_grain_h274.c
+index 4562c12..fc53680 100644
+--- a/src/shaders/film_grain_h274.c
++++ b/src/shaders/film_grain_h274.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/icc.c b/src/shaders/icc.c
+index 8c48552..9ec4d82 100644
+--- a/src/shaders/icc.c
++++ b/src/shaders/icc.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/lut.c b/src/shaders/lut.c
+index f6bbfd2..1d65031 100644
+--- a/src/shaders/lut.c
++++ b/src/shaders/lut.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders/sampling.c b/src/shaders/sampling.c
+index d761c56..f5d1fee 100644
+--- a/src/shaders/sampling.c
++++ b/src/shaders/sampling.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders.c b/src/shaders.c
+index 1421740..041933e 100644
+--- a/src/shaders.c
++++ b/src/shaders.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/shaders.h b/src/shaders.h
+index 29e4d08..3ea8eea 100644
+--- a/src/shaders.h
++++ b/src/shaders.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/swapchain.c b/src/swapchain.c
+index 47faf7b..f4c7c2b 100644
+--- a/src/swapchain.c
++++ b/src/swapchain.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/swapchain.h b/src/swapchain.h
+index 934a2b9..48a0b25 100644
+--- a/src/swapchain.h
++++ b/src/swapchain.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/tests/gpu_tests.h b/src/tests/gpu_tests.h
+index 505f2ed..031b89a 100644
+--- a/src/tests/gpu_tests.h
++++ b/src/tests/gpu_tests.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/tests/utils.h b/src/tests/utils.h
+index b28c123..9245c8c 100644
+--- a/src/tests/utils.h
++++ b/src/tests/utils.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/tone_mapping.c b/src/tone_mapping.c
+index a4a1632..34a0e39 100644
+--- a/src/tone_mapping.c
++++ b/src/tone_mapping.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/utils/dolbyvision.c b/src/utils/dolbyvision.c
+index 3798532..f6a3bdc 100644
+--- a/src/utils/dolbyvision.c
++++ b/src/utils/dolbyvision.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/utils/frame_queue.c b/src/utils/frame_queue.c
+index c16092f..3feb86d 100644
+--- a/src/utils/frame_queue.c
++++ b/src/utils/frame_queue.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/utils/upload.c b/src/utils/upload.c
+index cc41d6d..f7dc887 100644
+--- a/src/utils/upload.c
++++ b/src/utils/upload.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/command.c b/src/vulkan/command.c
+index c10dec7..8ccb58f 100644
+--- a/src/vulkan/command.c
++++ b/src/vulkan/command.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/command.h b/src/vulkan/command.h
+index 1d78e60..ded0201 100644
+--- a/src/vulkan/command.h
++++ b/src/vulkan/command.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/common.h b/src/vulkan/common.h
+index cf56c20..7bd1b3e 100644
+--- a/src/vulkan/common.h
++++ b/src/vulkan/common.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/context.c b/src/vulkan/context.c
+index 8d9fc3d..2876bfa 100644
+--- a/src/vulkan/context.c
++++ b/src/vulkan/context.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/formats.c b/src/vulkan/formats.c
+index 39265b5..093b83e 100644
+--- a/src/vulkan/formats.c
++++ b/src/vulkan/formats.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/formats.h b/src/vulkan/formats.h
+index b1408fd..a8d216e 100644
+--- a/src/vulkan/formats.h
++++ b/src/vulkan/formats.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/gpu.c b/src/vulkan/gpu.c
+index 09dbb6f..06c3a4f 100644
+--- a/src/vulkan/gpu.c
++++ b/src/vulkan/gpu.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/gpu.h b/src/vulkan/gpu.h
+index 90d6e1d..03e5fb7 100644
+--- a/src/vulkan/gpu.h
++++ b/src/vulkan/gpu.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/gpu_buf.c b/src/vulkan/gpu_buf.c
+index e291a0a..2e1f5a7 100644
+--- a/src/vulkan/gpu_buf.c
++++ b/src/vulkan/gpu_buf.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/gpu_pass.c b/src/vulkan/gpu_pass.c
+index 9918802..1ea50c1 100644
+--- a/src/vulkan/gpu_pass.c
++++ b/src/vulkan/gpu_pass.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/gpu_tex.c b/src/vulkan/gpu_tex.c
+index 321b284..658698e 100644
+--- a/src/vulkan/gpu_tex.c
++++ b/src/vulkan/gpu_tex.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/malloc.c b/src/vulkan/malloc.c
+index fc98a9a..c0cb7b2 100644
+--- a/src/vulkan/malloc.c
++++ b/src/vulkan/malloc.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/malloc.h b/src/vulkan/malloc.h
+index 115352e..cdb41ca 100644
+--- a/src/vulkan/malloc.h
++++ b/src/vulkan/malloc.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/stubs.c b/src/vulkan/stubs.c
+index 0c0738e..9585eab 100644
+--- a/src/vulkan/stubs.c
++++ b/src/vulkan/stubs.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/swapchain.c b/src/vulkan/swapchain.c
+index c4b6952..8779243 100644
+--- a/src/vulkan/swapchain.c
++++ b/src/vulkan/swapchain.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/utils.c b/src/vulkan/utils.c
+index 914f9e4..9f7d9cf 100644
+--- a/src/vulkan/utils.c
++++ b/src/vulkan/utils.c
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/utils.h b/src/vulkan/utils.h
+index b6c00a4..5ef78ad 100644
+--- a/src/vulkan/utils.h
++++ b/src/vulkan/utils.h
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+diff --git a/src/vulkan/utils_gen.py b/src/vulkan/utils_gen.py
+index d0a97f2..f40f9ae 100644
+--- a/src/vulkan/utils_gen.py
++++ b/src/vulkan/utils_gen.py
+@@ -3,16 +3,16 @@
+ # This file is part of libplacebo.
+ #
+ # libplacebo is free software; you can redistribute it and/or
+-# modify it under the terms of the GNU Lesser General Public
++# modify it under the terms of the GNU General Public
+ # License as published by the Free Software Foundation; either
+-# version 2.1 of the License, or (at your option) any later version.
++# version 3 of the License, or (at your option) any later version.
+ #
+ # libplacebo is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-# GNU Lesser General Public License for more details.
++# GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU Lesser General Public
++# You should have received a copy of the GNU General Public
+ # License along with libplacebo.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ import os.path
+diff --git a/win32/demos.rc.in b/win32/demos.rc.in
+index d6ef8eb..dcb940d 100644
+--- a/win32/demos.rc.in
++++ b/win32/demos.rc.in
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+@@ -32,7 +32,7 @@ FILESUBTYPE VFT2_UNKNOWN
+ {
+     BLOCK "StringFileInfo" {
+         BLOCK "000004b0" {
+-            VALUE "Comments", "libplacebo is distributed under the terms of the GNU Lesser General Public License, version 2.1"
++            VALUE "Comments", "libplacebo is distributed under the terms of the GNU General Public License, version 3.1"
+             VALUE "CompanyName", "libplacebo"
+             VALUE "FileDescription", "libplacebo"
+             VALUE "FileVersion", BUILD_VERSION
+diff --git a/win32/libplacebo.rc.in b/win32/libplacebo.rc.in
+index a174be4..4c18b85 100644
+--- a/win32/libplacebo.rc.in
++++ b/win32/libplacebo.rc.in
+@@ -2,16 +2,16 @@
+  * This file is part of libplacebo.
+  *
+  * libplacebo is free software; you can redistribute it and/or
+- * modify it under the terms of the GNU Lesser General Public
++ * modify it under the terms of the GNU General Public
+  * License as published by the Free Software Foundation; either
+- * version 2.1 of the License, or (at your option) any later version.
++ * version 3 of the License, or (at your option) any later version.
+  *
+  * libplacebo is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU Lesser General Public License for more details.
++ * GNU General Public License for more details.
+  *
+- * You should have received a copy of the GNU Lesser General Public
++ * You should have received a copy of the GNU General Public
+  * License along with libplacebo. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+@@ -32,7 +32,7 @@ FILESUBTYPE VFT2_UNKNOWN
+ {
+     BLOCK "StringFileInfo" {
+         BLOCK "000004b0" {
+-            VALUE "Comments", "libplacebo is distributed under the terms of the GNU Lesser General Public License, version 2.1"
++            VALUE "Comments", "libplacebo is distributed under the terms of the GNU General Public License, version 3.1"
+             VALUE "CompanyName", "libplacebo"
+             VALUE "FileDescription", "libplacebo"
+             VALUE "FileVersion", BUILD_VERSION

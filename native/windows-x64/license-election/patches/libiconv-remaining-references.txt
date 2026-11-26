@@ -1,0 +1,20 @@
+COPYING	license text, kept verbatim
+COPYING.LIB	license text, kept verbatim
+ChangeLog	Update the LGPL text.
+DESIGN	the LGPL or GPL license.)
+config.h.in	#undef GNULIB_CANONICALIZE_LGPL
+configure	GL_COND_OBJ_CANONICALIZE_LGPL_FALSE
+gnulib-local/modules/mbstate	LGPLv2+
+lib/gentranslit.c	printf(" * and/or modify it under the terms of the GNU Lesser General Public\n");
+libcharset/COPYING.LIB	license text, kept verbatim
+libcharset/ChangeLog	Update the LGPL text.
+srclib/Makefile.gnulib	if GL_COND_OBJ_CANONICALIZE_LGPL
+srclib/Makefile.in	@GL_COND_OBJ_CANONICALIZE_LGPL_TRUE@am__append_1 = canonicalize-lgpl.c
+srclib/basename-lgpl.h	#ifndef _BASENAME_LGPL_H
+srcm4/canonicalize.m4	AC_DEFUN([gl_CANONICALIZE_LGPL],
+srcm4/gnulib-comp.m4	gl_CANONICALIZE_LGPL
+srcm4/gnulib-tool.m4	dnl Usage: gl_LGPL or gl_LGPL([VERSION])
+tools/8bit_tab_to_h.c	fprintf(f, " * and/or modify it under the terms of the GNU Lesser General Public\n");
+tools/cjk_tab_to_h.c	printf(" * and/or modify it under the terms of the GNU Lesser General Public\n");
+tools/cjk_variants.c	printf(" * and/or modify it under the terms of the GNU Lesser General Public\n");
+windows/libiconv.rc	VALUE "FileDescription", "LGPLed libiconv for Windows\0"

@@ -1,0 +1,106 @@
+ECHO native decoder: license elections for this distribution
+=============================================================
+
+ECHO is distributed under the GNU General Public License, version 3 or (at
+your option) any later version. Its decoder, native/libmpv-2.dll, is mpv
+0.42.0 built with FFmpeg 9.1 in a GPL version 3 configuration and statically
+links the libraries listed below. For the copy of each component that ECHO
+distributes, ECHO makes the following license choices. These choices apply
+only to ECHO's copy; upstream projects remain available under their own terms.
+
+1. GNU LGPL 2.1, section 3: conversion to the GNU GPL, version 3 or later
+
+   Section 3 of the GNU Lesser General Public License version 2.1 permits
+   applying the terms of the ordinary GNU General Public License, instead of
+   the LGPL, to a given copy of a library, by changing the notices that refer
+   to the LGPL. ECHO does so for its copies of:
+
+     - libplacebo 7.387.0
+     - the LGPL-licensed files of mpv 0.42.0
+     - the LGPL-licensed files of FFmpeg 9.1
+     - GNU FriBidi 1.0.18
+     - GNU libiconv 1.19.1
+     - GNU gettext 1.0 runtime library (gettext-runtime/intl), including the
+       Gnulib modules vendored in gettext-runtime/intl/gnulib-lib
+
+   These copies are distributed under the GNU General Public License,
+   version 3 or (at your option) any later version. The notice changes are
+   the patches in patches/*-gplv3-election.patch of ECHO's source (and of the
+   license-election release archive); each applies with "patch -p1" to the
+   pristine archive listed in SOURCES.txt. *-elected-files.txt lists every
+   changed file; *-remaining-references.txt lists every remaining mention of
+   the LGPL with the reason it is not a license notice for this copy (license
+   texts, history, build-system symbols, or a file offered under another
+   license as noted below).
+
+   The patches change comments, documentation and build metadata only. They
+   do not change compiled code, so the shipped DLL is identical to one built
+   from the pristine sources.
+
+2. Alternative grants
+
+   - Graphite2 1.3.15 is offered under LGPL-2.1+, MPL-2.0, GPL-2.0+ or MIT.
+     ECHO uses it under the MIT license:
+
+       Copyright 2010, SIL International. All rights reserved.
+
+       Permission is hereby granted, free of charge, to any person obtaining
+       a copy of this software and associated documentation files (the
+       "Software"), to deal in the Software without restriction, including
+       without limitation the rights to use, copy, modify, merge, publish,
+       distribute, sublicense, and/or sell copies of the Software, and to
+       permit persons to whom the Software is furnished to do so, subject to
+       the following conditions:
+
+       The above copyright notice and this permission notice shall be
+       included in all copies or substantial portions of the Software.
+
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+       EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+       MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+       NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+       LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+       OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+       WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+   - FreeType 2.15.0 is offered under the FreeType License (FTL) or the GNU
+     GPL version 2 only. GPL version 2 only cannot be combined with GPL
+     version 3, so ECHO uses FreeType under the FreeType License (FTL.TXT in
+     notices/native/freetype):
+
+       Portions of this software are copyright (C) The FreeType Project
+       (www.freetype.org). All rights reserved.
+
+   - libplacebo's film_grain_av1.c, shaders/film_grain.h and
+     shaders/deinterlacing.h are also offered under the MIT license; their
+     MIT notices are retained in the source.
+
+   - Ryu code in GCC 16.2.0's libstdc++ (floating_to_chars.o; upstream
+     revision 150d0c87830756d34e76c42f7f33f811d89903a8), copyright 2018 Ulf
+     Adams, is offered under Apache-2.0 or Boost Software License 1.0. ECHO
+     uses it under the Boost Software License 1.0 (texts/ryu-LICENSE-Boost).
+
+   - fast_float in libstdc++ (floating_from_chars.o; upstream revision
+     2ef9abbcf6a11958b6fa685a89d0150022e82e78), copyright 2021 The
+     fast_float authors, is used under its MIT license
+     (texts/fast_float-LICENSE-MIT).
+
+3. Other components
+
+   - GCC's libgcc and libstdc++ are GPL version 3 with the GCC Runtime
+     Library Exception 3.1; the MinGW-w64 runtime, startup code and
+     winpthreads carry the permissive notices in notices/native.
+   - HarfBuzz, FriBidi and libunibreak embed tables generated from Unicode
+     data, used under the Unicode License V3 (texts/Unicode-License-V3.txt).
+     The generated tables and their generators are part of the distributed
+     sources.
+   - Every other linked library's license text is in notices/native.
+
+4. Patents
+
+   The decoder includes MP3 and AAC decoders. ECHO's licenses grant no patent
+   rights beyond those the licenses themselves contain.
+
+The complete corresponding source of this build, including the pristine
+archives, these patches and the build recipes, is published with each
+release at https://github.com/Venuss1337/echo/releases.

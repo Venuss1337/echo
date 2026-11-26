@@ -1,0 +1,11 @@
+Copyright	License LGPL version 3 or later (LGPLv2.1+ in this document, see LICENSE.LGPL
+DOCS/contribute.md	- All new code must be LGPLv2.1+ licensed, or come with the implicit agreement
+LICENSE.GPL	license text, kept verbatim
+LICENSE.LGPL	license text, kept verbatim
+README.md	GPLv2 "or later" by default, LGPLv2.1 "or later" with `-Dgpl=false`.
+ci/build-mingw64-full.sh	license=LICENSE.LGPL
+ci/publish-release.sh	elif test("-lgpl$")       then "LGPL"
+etc/mpv.metainfo.xml	<project_license>GPL-2.0-or-later AND LGPL-2.0-or-later</project_license>
+include/mpv/client.h	* -Dgpl=false, which makes it LGPLv2+.
+meson.build	license_files: ['LICENSE.GPL', 'LICENSE.LGPL', 'Copyright'],
+video/out/opengl/gl_headers.h	* - mpv or MPlayer code (LGPL 2.1 or later)

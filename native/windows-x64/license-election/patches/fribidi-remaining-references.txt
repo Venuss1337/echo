@@ -1,0 +1,3 @@
+COPYING	license text, kept verbatim
+ChangeLog.old	* README, *.h, *.c, unidata/CreateGetType.pl: changes to reflect LGPL.
+lib/fribidi.c	"the terms of the GNU Lesser General Public License.\n"
